@@ -37,23 +37,15 @@ const SOCIAL_LINKS: SocialLink[] = [
   },
 ]
 
-const SocialLinks = () => {
-  return (
-    <div className="flex justify-between items-center w-3/4 md:w-full md:gap-7 pb-20 md:pb-0 animate">
-      {SOCIAL_LINKS.map(({ href, icon, label }) => (
-        <Link
-          key={href}
-          className="link-wrapper"
-          target="_blank"
-          rel="noreferrer noopener"
-          href={href}
-          aria-label={label}
-        >
-          <Image className="social-logos" src={icon} alt={label} />
-        </Link>
-      ))}
-    </div>
-  )
-}
+const SocialLinks = () => (
+  <div className="social-links animate">
+    {SOCIAL_LINKS.map(({ href, icon, label }) => (
+      <Link key={href} className="link-wrapper" target="_blank" rel="noreferrer noopener" href={href}>
+        <span className="sr-only">{label}</span>
+        <Image className="social-logos" src={icon} alt="" aria-hidden="true" />
+      </Link>
+    ))}
+  </div>
+)
 
 export default SocialLinks

@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
+import type { Metadata, Viewport } from 'next'
+
 import Footer from './_components/Footer'
 import Navbar from './_components/Navbar'
 
@@ -21,7 +23,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-white text-slate-900 font-sans">
+      <body className="bg-[#06140e] text-emerald-50 font-sans">
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

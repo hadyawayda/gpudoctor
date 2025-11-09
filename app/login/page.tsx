@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 
 const LoginPage = () => {
   return (
-    <main className="bg-slate-950 text-white">
+    <main className="bg-[#07130e] text-emerald-50">
       <PageHeader
         title="Sign in"
         description="Access your dashboard to follow repairs, manage shipping preferences, and review invoices."
       />
       <section className="mx-auto max-w-md px-6 pb-24 lg:px-8">
-        <form className="space-y-5 rounded-3xl border border-white/10 bg-white/5 p-8 text-sm text-slate-200 backdrop-blur">
+        <form className="space-y-5 rounded-3xl border border-emerald-500/20 bg-[#0b1f17]/70 p-8 text-sm text-emerald-50/80">
           <div className="space-y-2">
             <label htmlFor="email" className="text-sm font-semibold text-emerald-200">
               Email
@@ -25,7 +25,7 @@ const LoginPage = () => {
               name="email"
               type="email"
               required
-              className="w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white placeholder:text-slate-500"
+              className="w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50 placeholder:text-emerald-200/40"
             />
           </div>
           <div className="space-y-2">
@@ -37,7 +37,7 @@ const LoginPage = () => {
               name="password"
               type="password"
               required
-              className="w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white placeholder:text-slate-500"
+              className="w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50 placeholder:text-emerald-200/40"
             />
           </div>
           <button
@@ -46,9 +46,9 @@ const LoginPage = () => {
           >
             Continue
           </button>
-          <p className="text-center text-xs text-slate-400">
+          <p className="text-center text-xs text-emerald-50/60">
             Need an account?{' '}
-            <Link className="font-semibold text-emerald-200 hover:text-emerald-100" href="/account">
+            <Link className="font-semibold text-emerald-100 hover:text-emerald-50" href="/account">
               Request access
             </Link>
           </p>

@@ -6,10 +6,10 @@ export type NavLink = {
 
 export const NAV_LINKS: NavLink[] = [
   { href: '/services', label: 'Services' },
-  { href: '/products', label: 'Products' },
-  { href: '/marketplace', label: 'Marketplace', badge: 'New' },
-  { href: '/builds', label: 'PC Builder' },
-  { href: '/repair-requests', label: 'Repair Requests' },
-  { href: '/sell', label: 'Sell a GPU' },
-  { href: '/community', label: 'Community' },
+  { href: '/store', label: 'Store' },
+  { href: '/marketplace', label: 'Marketplace' },
+  { href: '/builds', label: 'Build your PC' },
+  { href: '/repair-requests', label: 'Schedule a repair' },
+  { href: '/sell', label: 'Sell your GPU' },
+  { href: '/portal', label: 'Customer portal' },
 ]
