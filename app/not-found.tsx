@@ -11,7 +11,7 @@ const NotFoundPage = () => {
         actions={
           <Link
             href="/"
-            className="inline-flex items-center rounded-md bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700"
+            className="inline-flex items-center rounded-full bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-300 px-4 py-2 text-sm font-semibold text-[#07130e] shadow-lg shadow-emerald-500/30 hover:from-emerald-300 hover:to-teal-200"
           >
             Return home
           </Link>

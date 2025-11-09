@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const CartPage = () => {
   return (
-    <main className="bg-slate-950 text-white">
+    <main className="bg-[#07130e] text-emerald-50">
       <PageHeader
         title="Your cart"
         description="Review the services and hardware you selected before heading to checkout. Items are saved for 24 hours."
@@ -23,7 +23,7 @@ const CartPage = () => {
         }
       />
       <section className="mx-auto max-w-4xl px-6 pb-24 lg:px-10 xl:px-16">
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center text-sm text-slate-200">
+        <div className="rounded-3xl border border-emerald-500/20 bg-[#0b1f17]/70 p-8 text-center text-sm text-emerald-50/80">
           Cart synchronisation with the marketplace is coming soon. Add items from the store or marketplace and they will appear
           here automatically.
         </div>
