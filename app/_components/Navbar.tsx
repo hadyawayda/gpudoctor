@@ -6,16 +6,16 @@ import Link from 'next/link'
 
 import CartButton from './CartButton'
 import Menu from './HamMenu'
-import { NAV_LINKS } from './navigation'
+import { NAV_LINKS } from '@/src/config/navigation'
 
-import logo from '@/public/Images/gpu-doctor-logo.svg'
+import logo from '@/public/logo.svg'
 import mobileCartIcon from '@/public/Images/Cart-black.svg'
 
 import {
   catalogProducts,
   marketplaceListings,
   serviceCatalog,
-} from '../_data/site'
+} from '@/src/data/site'
 
 import './Navbar.css'
 

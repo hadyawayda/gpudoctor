@@ -1,48 +1,43 @@
-import Image, { type StaticImageData } from 'next/image'
 import Link from 'next/link'
-
-import facebookIcon from '@/public/Images/Facebook.svg'
-import instagramIcon from '@/public/Images/Instagram.svg'
-import tiktokIcon from '@/public/Images/TikTok.svg'
-import youtubeIcon from '@/public/Images/YouTube.svg'
+import { Instagram, Twitter, Youtube, Facebook } from 'lucide-react'
 
 import './Socials.css'
 
 type SocialLink = {
   href: string
   label: string
-  icon: StaticImageData
+  icon: React.ComponentType<{ className?: string }>
 }
 
 const SOCIAL_LINKS: SocialLink[] = [
   {
     href: 'https://www.youtube.com/channel/UCoSiqKkT0i460xJA_JFFoFQ',
     label: 'YouTube',
-    icon: youtubeIcon,
+    icon: Youtube,
   },
   {
     href: 'https://www.instagram.com/gpu.doctor/',
     label: 'Instagram',
-    icon: instagramIcon,
+    icon: Instagram,
   },
   {
-    href: 'https://www.tiktok.com/@gpudoctor',
-    label: 'TikTok',
-    icon: tiktokIcon,
+    href: 'https://twitter.com/gpudoctor',
+    label: 'Twitter',
+    icon: Twitter,
   },
   {
     href: 'https://www.facebook.com/hady.laiho',
     label: 'Facebook',
-    icon: facebookIcon,
+    icon: Facebook,
   },
 ]
 
 const SocialLinks = () => (
   <div className="social-links animate">
-    {SOCIAL_LINKS.map(({ href, icon, label }) => (
+    {SOCIAL_LINKS.map(({ href, label, icon: Icon }) => (
       <Link key={href} className="link-wrapper" target="_blank" rel="noreferrer noopener" href={href}>
         <span className="sr-only">{label}</span>
-        <Image className="social-logos" src={icon} alt="" aria-hidden="true" />
+        <Icon className="social-icon" aria-hidden="true" />
       </Link>
     ))}
   </div>
