@@ -1,14 +1,22 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1f19;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a1612;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
   <!-- Chip base -->
-  <rect x="4" y="4" width="24" height="24" rx="3" fill="#0d1f19"/>
-  <rect x="6" y="6" width="20" height="20" rx="2" fill="#0a1612" stroke="#76B900" stroke-width="2"/>
+  <rect x="4" y="4" width="24" height="24" rx="4" fill="url(#bgGrad)"/>
+  <rect x="6" y="6" width="20" height="20" rx="3" fill="#0a1612" stroke="#76B900" stroke-width="2.5"/>
   
   <!-- Circuit lines -->
-  <line x1="10" y1="12" x2="22" y2="12" stroke="#76B900" stroke-width="1.5" opacity="0.8"/>
-  <line x1="10" y1="16" x2="22" y2="16" stroke="#3ce37b" stroke-width="1.5" opacity="0.8"/>
-  <line x1="10" y1="20" x2="22" y2="20" stroke="#76B900" stroke-width="1.5" opacity="0.8"/>
+  <line x1="10" y1="12" x2="22" y2="12" stroke="#76B900" stroke-width="2" opacity="0.9"/>
+  <line x1="10" y1="16" x2="22" y2="16" stroke="#10b981" stroke-width="2" opacity="0.9"/>
+  <line x1="10" y1="20" x2="22" y2="20" stroke="#76B900" stroke-width="2" opacity="0.9"/>
   
-  <!-- Medical cross -->
-  <circle cx="16" cy="16" r="5" fill="#0a1612"/>
-  <path d="M16 13 L16 19 M13 16 L19 16" stroke="#76B900" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Medical cross in center -->
+  <circle cx="16" cy="16" r="6.5" fill="#0a1612" stroke="#76B900" stroke-width="2"/>
+  <path d="M16 12 L16 20 M12 16 L20 16" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
 </svg>

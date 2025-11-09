@@ -1,42 +1,60 @@
-<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- GPU Chip Icon -->
+<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- GPU Chip Icon with more detail -->
   <g id="gpu-chip">
-    <!-- Chip base -->
-    <rect x="2" y="8" width="24" height="24" rx="2" fill="#76B900" opacity="0.2"/>
-    <rect x="4" y="10" width="20" height="20" rx="1.5" fill="#0d1f19" stroke="#76B900" stroke-width="1.5"/>
+    <!-- Outer chip glow -->
+    <rect x="2" y="10" width="26" height="26" rx="3" fill="#76B900" opacity="0.15"/>
     
-    <!-- Circuit lines -->
-    <line x1="8" y1="16" x2="20" y2="16" stroke="#76B900" stroke-width="1.5" opacity="0.8"/>
-    <line x1="8" y1="20" x2="20" y2="20" stroke="#3ce37b" stroke-width="1.5" opacity="0.8"/>
-    <line x1="8" y1="24" x2="20" y2="24" stroke="#76B900" stroke-width="1.5" opacity="0.8"/>
+    <!-- Chip base with gradient -->
+    <defs>
+      <linearGradient id="chipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#0d1f19;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#0a1612;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect x="4" y="12" width="22" height="22" rx="2" fill="url(#chipGrad)" stroke="#76B900" stroke-width="2"/>
     
-    <!-- Medical cross integrated -->
-    <circle cx="14" cy="20" r="5" fill="#0d1f19"/>
-    <path d="M14 17 L14 23 M11 20 L17 20" stroke="#76B900" stroke-width="2" stroke-linecap="round"/>
+    <!-- Circuit pattern -->
+    <line x1="9" y1="18" x2="21" y2="18" stroke="#76B900" stroke-width="1.5" opacity="0.9"/>
+    <line x1="9" y1="23" x2="21" y2="23" stroke="#10b981" stroke-width="1.5" opacity="0.9"/>
+    <line x1="9" y1="28" x2="21" y2="28" stroke="#76B900" stroke-width="1.5" opacity="0.9"/>
     
-    <!-- Chip pins -->
-    <line x1="4" y1="13" x2="1" y2="13" stroke="#76B900" stroke-width="1"/>
-    <line x1="4" y1="17" x2="1" y2="17" stroke="#76B900" stroke-width="1"/>
-    <line x1="4" y1="21" x2="1" y2="21" stroke="#76B900" stroke-width="1"/>
-    <line x1="4" y1="27" x2="1" y2="27" stroke="#76B900" stroke-width="1"/>
+    <!-- Vertical lines -->
+    <line x1="12" y1="15" x2="12" y2="31" stroke="#10b981" stroke-width="1" opacity="0.6"/>
+    <line x1="18" y1="15" x2="18" y2="31" stroke="#76B900" stroke-width="1" opacity="0.6"/>
     
-    <line x1="24" y1="13" x2="27" y2="13" stroke="#76B900" stroke-width="1"/>
-    <line x1="24" y1="17" x2="27" y2="17" stroke="#76B900" stroke-width="1"/>
-    <line x1="24" y1="21" x2="27" y2="21" stroke="#76B900" stroke-width="1"/>
-    <line x1="24" y1="27" x2="27" y2="27" stroke="#76B900" stroke-width="1"/>
+    <!-- Medical cross integrated in center -->
+    <circle cx="15" cy="23" r="6" fill="#0a1612" stroke="#76B900" stroke-width="1.5"/>
+    <path d="M15 19.5 L15 26.5 M11.5 23 L18.5 23" stroke="#76B900" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- Chip pins (left) -->
+    <line x1="4" y1="15" x2="0.5" y2="15" stroke="#76B900" stroke-width="1.5"/>
+    <line x1="4" y1="19" x2="0.5" y2="19" stroke="#10b981" stroke-width="1.5"/>
+    <line x1="4" y1="23" x2="0.5" y2="23" stroke="#76B900" stroke-width="1.5"/>
+    <line x1="4" y1="27" x2="0.5" y2="27" stroke="#10b981" stroke-width="1.5"/>
+    <line x1="4" y1="31" x2="0.5" y2="31" stroke="#76B900" stroke-width="1.5"/>
+    
+    <!-- Chip pins (right) -->
+    <line x1="26" y1="15" x2="29.5" y2="15" stroke="#76B900" stroke-width="1.5"/>
+    <line x1="26" y1="19" x2="29.5" y2="19" stroke="#10b981" stroke-width="1.5"/>
+    <line x1="26" y1="23" x2="29.5" y2="23" stroke="#76B900" stroke-width="1.5"/>
+    <line x1="26" y1="27" x2="29.5" y2="27" stroke="#10b981" stroke-width="1.5"/>
+    <line x1="26" y1="31" x2="29.5" y2="31" stroke="#76B900" stroke-width="1.5"/>
   </g>
   
   <!-- Text -->
   <g id="text">
-    <text x="36" y="22" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#ecfdf3">
+    <!-- GPU in NVIDIA green -->
+    <text x="38" y="26" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="800" fill="#76B900" letter-spacing="-0.5">
       GPU
     </text>
-    <text x="36" y="22" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#ecfdf3">
-      <tspan x="68" y="22">Doctor</tspan>
+    
+    <!-- Doctor in accent teal -->
+    <text x="38" y="26" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="800" fill="#10b981" letter-spacing="-0.5">
+      <tspan x="84" y="26">Doctor</tspan>
     </text>
     
-    <!-- Subtitle -->
-    <text x="36" y="32" font-family="Inter, system-ui, sans-serif" font-size="7" font-weight="500" fill="#76B900" letter-spacing="0.5">
+    <!-- Subtitle with spacing -->
+    <text x="38" y="38" font-family="Inter, system-ui, sans-serif" font-size="7.5" font-weight="600" fill="#6ee7b7" letter-spacing="1.2">
       PRECISION REPAIR LAB
     </text>
   </g>

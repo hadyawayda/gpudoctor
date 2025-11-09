@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-import PageHeader from '@/app/_components/PageHeader'
+import PageHeader from '@/app/shared/PageHeader'
 
 import { repairHistory } from '../_data/site'
 

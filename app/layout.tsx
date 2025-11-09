@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
-import Footer from './_components/Footer'
-import Navbar from './_components/Navbar'
+import Footer from './shared/Footer'
+import Navbar from './shared/Navbar'
 
 export const metadata: Metadata = {
   title: {
@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   },
   description:
     'Expert GPU diagnostics, repairs, and performance upgrades delivered with meticulous attention to detail.',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 }
 
 export const viewport: Viewport = {

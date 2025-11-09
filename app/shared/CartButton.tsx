@@ -89,21 +89,17 @@ const CartButton = () => {
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
-        className="group flex items-center rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-500 px-4 py-2 font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:from-emerald-300 hover:via-cyan-300 hover:to-sky-400"
+        className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-nvidia-500 to-accent-600 px-4 py-2 font-semibold text-white shadow-lg shadow-nvidia-500/30 transition hover:shadow-nvidia-500/50 hover:scale-105"
       >
-        <span className="tracking-tight">Cart</span>
-        <span className="ml-3 block">
-          <Image className="cart-logo" alt="cart" src={cartIcon} />
-        </span>
+        <span className="text-sm tracking-tight">Cart</span>
+        <Image className="w-4 h-4" alt="cart" src={cartIcon} />
       </button>
-      <span className="w-0">
-        <span className="relative -left-3.5 z-0 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-300 text-xs font-semibold text-slate-900">
-          {items.length >= 99 ? 99 : items.length}
-        </span>
+      <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent-400 text-xs font-bold text-white border-2 border-[#0a1612]">
+        {items.length >= 9 ? '9+' : items.length}
       </span>
 
       {open ? (
-        <div className="absolute right-0 top-14 w-[22rem] overflow-hidden rounded-3xl border border-emerald-500/20 bg-[#05160e]/95 text-emerald-50 shadow-2xl backdrop-blur">
+        <div className="absolute right-0 top-14 w-[22rem] overflow-hidden rounded-3xl border border-accent-500/20 bg-[#0d1f19]/95 text-emerald-50 shadow-2xl backdrop-blur">
           {items.length === 0 ? (
             <div className="flex h-48 items-center justify-center text-sm text-emerald-50/60">Your cart is empty.</div>
           ) : (
@@ -115,38 +111,38 @@ const CartButton = () => {
                     <div className="flex items-start justify-between gap-4">
                       <Link
                         href={item.href}
-                        className="flex flex-1 gap-4 rounded-2xl bg-[#0b1f17]/70 p-3 transition hover:bg-emerald-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                        className="flex flex-1 gap-4 rounded-2xl bg-[#0a1612]/70 p-3 transition hover:bg-accent-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
                       >
                         <div className="h-16 w-16 rounded-xl bg-[#123423]/60" />
                         <div className="flex-1 overflow-hidden">
-                          <p className="truncate text-sm font-semibold text-emerald-100">{item.name}</p>
+                          <p className="truncate text-sm font-semibold text-accent-200">{item.name}</p>
                           <p className="mt-1 truncate text-xs text-emerald-50/70">{item.description}</p>
-                          <p className="mt-2 text-xs font-medium text-emerald-200">Qty: {item.quantity}</p>
+                          <p className="mt-2 text-xs font-medium text-accent-300">Qty: {item.quantity}</p>
                         </div>
                       </Link>
                       <div className="flex h-full flex-col items-end justify-between py-1">
-                        <button type="button" onClick={() => removeItem(item.id)} className="text-emerald-50/60 hover:text-emerald-200">
+                        <button type="button" onClick={() => removeItem(item.id)} className="text-emerald-50/60 hover:text-accent-300 transition-colors">
                           <TrashIcon />
                         </button>
-                        <div className="text-sm font-semibold text-emerald-200">
+                        <div className="text-sm font-semibold text-accent-300">
                           ${Number((item.price * item.quantity).toFixed(2))}
                         </div>
                       </div>
                     </div>
-                    {!isLast ? <div className="mx-auto mt-3 h-px w-3/4 bg-emerald-500/20" /> : null}
+                    {!isLast ? <div className="mx-auto mt-3 h-px w-3/4 bg-accent-500/20" /> : null}
                   </div>
                 )
               })}
             </div>
           )}
-          <div className="flex items-center justify-between border-t border-emerald-500/20 bg-[#05160e]/80 px-4 py-3 text-sm">
+          <div className="flex items-center justify-between border-t border-accent-500/20 bg-[#0a1612]/80 px-4 py-3 text-sm">
             <span className="text-emerald-50/70">Subtotal</span>
-            <span className="font-semibold text-emerald-200">${subtotal}</span>
+            <span className="font-semibold text-accent-300">${subtotal}</span>
           </div>
-          <div className="border-t border-emerald-500/20 bg-[#05160e]/80 px-4 pb-4">
+          <div className="border-t border-accent-500/20 bg-[#0a1612]/80 px-4 pb-4">
             <Link
               href="/checkout"
-              className="inline-flex w-full justify-center rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:from-emerald-300 hover:via-cyan-300 hover:to-sky-400"
+              className="inline-flex w-full justify-center rounded-full bg-gradient-to-r from-nvidia-500 to-accent-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-nvidia-500/30 hover:shadow-nvidia-500/50 transition-all"
             >
               Checkout
             </Link>

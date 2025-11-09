@@ -17,13 +17,13 @@ const Home = () => {
   return (
     <main className="bg-[#0a1612] text-emerald-50">
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(118,185,0,0.15),_rgba(60,227,123,0.1),_rgba(13,31,25,0.95)_65%)]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(118,185,0,0.2),_rgba(16,185,129,0.15),_rgba(13,31,25,0.95)_65%)]" />
         <div className="mx-auto grid max-w-6xl gap-12 px-6 pb-24 pt-32 lg:grid-cols-[1.2fr_1fr] lg:px-10 xl:px-16">
           <header className="space-y-6">
             <span className="inline-flex items-center rounded-full bg-nvidia-500/10 px-4 py-1 text-sm font-medium text-nvidia-400 border border-nvidia-500/20">
               GPU repair lab & certified marketplace
             </span>
-            <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-emerald-200 via-nvidia-300 to-emerald-100 bg-clip-text text-transparent">
+            <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-accent-200 via-nvidia-400 to-accent-300 bg-clip-text text-transparent">
               Protect your GPUs with documented repairs, fair timelines, and transparent pricing.
             </h1>
             <p className="max-w-xl text-lg text-emerald-50/80">
@@ -34,31 +34,31 @@ const Home = () => {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/repair-requests"
-                className="rounded-full bg-gradient-to-r from-nvidia-500 via-emerald-400 to-nvidia-400 px-6 py-3 text-sm font-semibold text-[#0a1612] shadow-lg shadow-nvidia-500/30 transition hover:shadow-nvidia-500/50 hover:scale-105"
+                className="rounded-full bg-gradient-to-r from-nvidia-500 via-nvidia-600 to-accent-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-nvidia-500/30 transition hover:shadow-nvidia-500/50 hover:scale-105"
               >
                 Schedule a repair intake
               </Link>
               <Link
                 href="/services"
-                className="rounded-full border border-nvidia-500/60 px-6 py-3 text-sm font-semibold text-emerald-100 transition hover:border-nvidia-400 hover:text-emerald-50 hover:bg-nvidia-500/10"
+                className="rounded-full border border-accent-500/60 px-6 py-3 text-sm font-semibold text-accent-200 transition hover:border-accent-400 hover:text-accent-100 hover:bg-accent-500/10"
               >
                 Explore services
               </Link>
             </div>
           </header>
-          <aside className="rounded-3xl border border-nvidia-500/20 bg-[#0d1f19]/80 p-6 backdrop-blur shadow-lg shadow-nvidia-500/10">
-            <h2 className="text-lg font-semibold text-nvidia-300">What every job includes</h2>
+          <aside className="rounded-3xl border border-accent-500/20 bg-[#0d1f19]/80 p-6 backdrop-blur shadow-lg shadow-accent-500/10">
+            <h2 className="text-lg font-semibold text-accent-300">What every job includes</h2>
             <ul className="mt-4 space-y-4 text-sm text-emerald-50/80">
               <li>
-                <strong className="text-nvidia-300">Documented intake:</strong> Serial photos, condition notes, and proof of
+                <strong className="text-accent-300">Documented intake:</strong> Serial photos, condition notes, and proof of
                 ownership stored in your account.
               </li>
               <li>
-                <strong className="text-nvidia-300">Published timelines:</strong> Standard 6-week queue or 7-day expedited lane with
+                <strong className="text-accent-300">Published timelines:</strong> Standard 6-week queue or 7-day expedited lane with
                 daily status messages.
               </li>
               <li>
-                <strong className="text-nvidia-300">Certified handoff:</strong> Stress logs, temperature reports, and warranty options
+                <strong className="text-accent-300">Certified handoff:</strong> Stress logs, temperature reports, and warranty options
                 attached to every return shipment.
               </li>
             </ul>
@@ -68,9 +68,9 @@ const Home = () => {
           {landingMetrics.map(({ label, value, emphasis }) => (
             <div
               key={label}
-              className="flex flex-1 min-w-[16rem] flex-col rounded-2xl border border-nvidia-500/20 bg-[#0d1f19]/70 px-6 py-5 hover:border-nvidia-500/40 transition-colors"
+              className="flex flex-1 min-w-[16rem] flex-col rounded-2xl border border-accent-500/20 bg-[#0d1f19]/70 px-6 py-5 hover:border-accent-400/40 transition-colors"
             >
-              <span className="text-2xl font-semibold text-nvidia-300">{value}</span>
+              <span className="text-2xl font-semibold text-accent-300">{value}</span>
               <span className="mt-2 text-sm font-medium text-emerald-50/80">{label}</span>
               <p className="mt-3 text-xs text-emerald-50/70">{emphasis}</p>
             </div>
@@ -82,7 +82,7 @@ const Home = () => {
         <div className="mx-auto max-w-6xl px-6 lg:px-10 xl:px-16">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
             <div className="space-y-6">
-              <h2 className="text-3xl font-semibold text-nvidia-300">Why technicians trust GPU Doctor</h2>
+              <h2 className="text-3xl font-semibold text-nvidia-400">Why technicians trust GPU Doctor</h2>
               <p className="text-lg text-emerald-50/80">
                 You get a partner who respects the value of your hardware. Every diagnosis, solder, and shipment is executed with
                 documented accountability so your rights stay preserved.
