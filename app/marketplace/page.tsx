@@ -1,17 +1,11 @@
 'use client'
 
-import type { Metadata } from 'next'
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 
 import PageHeader from '@/app/_components/PageHeader'
 
 import { marketplaceListings } from '../_data/site'
-
-export const metadata: Metadata = {
-  title: 'Marketplace',
-  description: 'Certified GPUs with refurbishment options, warranty upgrades, and powerful search filters.',
-}
 
 const getNumericPrice = (price: string) => Number(price.replace(/[^0-9.]/g, ''))
 
