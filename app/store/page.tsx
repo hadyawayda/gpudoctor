@@ -1,117 +1,39 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-import { createClient } from '@supabase/supabase-js'
-import Navbar from '../../app/_components/Navbar'
-import Footer from '../../app/_components/Footer'
-import Image from 'next/image'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
-type Product = {
-  id: number
-  name: string
-  price: number
-  imageUrl: string
-  description: string
+import PageHeader from '@/app/_components/PageHeader'
+
+import { catalogProducts } from '../_data/site'
+
+import StoreContent from './StoreContent'
+
+export const metadata: Metadata = {
+  title: 'Store',
+  description: 'Shop GPU Doctor curated inventory with filters for brand, category, condition, availability, and price range.',
 }
 
-function cn(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
-
-export default function Products() {
-  const [products, setProducts] = useState<Product[] | null>(null)
-  const [error, setError] = useState('')
-  const [loading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const supabaseAdmin = createClient(
-          process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-          process.env.NEXT_PUBLIC_SUPABASE_KEY || ''
-        )
-        const { data } = await supabaseAdmin
-          .from('Products')
-          .select('*')
-          .order('id')
-        console.log('hi')
-        setError('')
-        setProducts(data)
-      } catch (err: Error | unknown) {
-        console.error(err)
-        console.log((err as Error).stack)
-        setError((err as Error).toString())
-      } finally {
-        setIsLoading(false)
-      }
-    }
-
-    ;(async () => await getData())()
-  }, [])
-
+const StorePage = () => {
   return (
-    <div>
-      {loading ? (
-        <div className="justify-center items-center flex h-full my-80">
-          Loading...
-        </div>
-      ) : (
-        <main>
-          <Navbar />
-          <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-            <h1 className="mb-8">Products List:</h1>
-            <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-              {products?.map((product: Product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          </div>
-          <div>
-            {error && (
-              <p className="justify-center items-center flex text-red-500">
-                {error}
-              </p>
-            )}
-          </div>
-          <Footer />
-        </main>
-      )}
-    </div>
-  )
-}
-
-function ProductCard({ product }: { product: Product }) {
-  const [isLoading, setLoading] = useState(true)
-
-  return (
-    <Link href={`/products/${product.id}`} className="group">
-      <div className="aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8 w-full overflow-hidden rounded-lg bg-gray-400">
-        <Image
-          alt=""
-          src={product.imageUrl}
-          fill={true}
-          className={cn(
-            'group-hover:opacity-75 duration-700 ease-in-out object-cover',
-            isLoading
-              ? 'grayscale blur-2xl scale-110'
-              : 'grayscale-0 blur-0 scale-100'
-          )}
-          onLoadingComplete={() => setLoading(false)}
+    <main className="bg-[#07130e] text-emerald-50">
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(60,227,123,0.22),_transparent_70%)]" />
+        <PageHeader
+          title="Live store feed"
+          description="Real-time availability for GPU Doctor curated hardware. Filter by brand, condition, or price, and bundle installation or maintenance services at checkout."
+          actions={
+            <Link
+              href="/marketplace"
+              className="inline-flex items-center rounded-full border border-emerald-400/60 px-5 py-3 text-sm font-semibold text-emerald-100 hover:border-emerald-300 hover:text-emerald-50"
+            >
+              Browse marketplace listings
+            </Link>
+          }
         />
       </div>
-      <div className="mt-4 flex flex-col grow overflow-hidden justify-between">
-        <div className="flex justify-between mb-2">
-          <h3 className="text-lg font-medium text-gray-700">{product.name}</h3>
-          <p className="mt-0.5 pt-px whitespace-nowrap text-gray-700 font-semibold">
-            ${product.price}
-          </p>
-        </div>
-        <p className="mt-1 leading-5 text-sm break-words font-light h-full max-h-[4rem] text-gray-500">
-          {product.description}
-          gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-        </p>
-      </div>
-    </Link>
+
+      <StoreContent products={catalogProducts} />
+    </main>
   )
 }
+
+export default StorePage

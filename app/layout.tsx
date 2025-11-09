@@ -1,13 +1,30 @@
-import './globals.css';
-import { Inter } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+import Footer from './_components/Footer'
+import Navbar from './_components/Navbar'
 
-export default function RootLayout({ children }: {children: React.ReactNode}) {
+export const metadata: Metadata = {
+  title: {
+    default: 'GPU Doctor',
+    template: '%s | GPU Doctor',
+  },
+  description:
+    'Expert GPU diagnostics, repairs, and performance upgrades delivered with meticulous attention to detail.',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children}
+      <body className="bg-[#06140e] text-emerald-50 font-sans">
+        <Navbar />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   )
