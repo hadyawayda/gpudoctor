@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import PageHeader from '@/app/_components/PageHeader'
+import PageHeader from '@/app/shared/PageHeader'
 
 const NotFoundPage = () => {
   return (
