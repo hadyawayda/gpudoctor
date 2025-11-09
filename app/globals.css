@@ -66,6 +66,10 @@ a {
   transition-delay: 1250ms;
   transform: translateY(0);
 }
+.show.vvvlate {
+  transition-delay: 1500ms;
+  transform: translateY(0);
+}
 
 @media (prefers-reduced-motion) {
   .hidden {
