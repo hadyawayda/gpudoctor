@@ -7,10 +7,10 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(10, 22, 18, 0.85);
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(118, 185, 0, 0.2);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(14, 165, 233, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .navbar {
@@ -49,7 +49,7 @@
   height: 2px;
   transform: scaleX(0);
   transform-origin: left;
-  background: linear-gradient(90deg, #76B900, #3ce37b);
+  background: linear-gradient(90deg, #0ea5e9, #a855f7);
   transition: transform 200ms ease;
 }
 
@@ -75,16 +75,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at center, rgba(118, 185, 0, 0.1), transparent 70%);
-  border: 1px solid rgba(118, 185, 0, 0.3);
+  background: radial-gradient(circle at center, rgba(14, 165, 233, 0.1), transparent 70%);
+  border: 1px solid rgba(14, 165, 233, 0.3);
   border-radius: 999px;
   transition: border-color 200ms ease, background 200ms ease, transform 150ms ease;
 }
 
 .search:hover,
 .search:focus-visible {
-  border-color: rgba(118, 185, 0, 0.6);
-  background: radial-gradient(circle at center, rgba(118, 185, 0, 0.2), transparent 70%);
+  border-color: rgba(14, 165, 233, 0.6);
+  background: radial-gradient(circle at center, rgba(14, 165, 233, 0.2), transparent 70%);
   transform: scale(1.05);
 }
 
@@ -101,15 +101,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(118, 185, 0, 0.3);
-  background: rgba(118, 185, 0, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  background: rgba(168, 85, 247, 0.08);
   position: relative;
-  color: #0d1f19;
+  color: #1e293b;
   transition: border-color 200ms ease, transform 150ms ease;
 }
 
 .mobile-cart:hover {
-  border-color: rgba(118, 185, 0, 0.6);
+  border-color: rgba(168, 85, 247, 0.6);
   transform: scale(1.05);
 }
 
@@ -125,8 +125,8 @@
   font-size: 0.625rem;
   font-weight: 700;
   border-radius: 999px;
-  background: #76B900;
-  color: #0a1612;
+  background: #06b6d4;
+  color: white;
 }
 
 .sign-in-wrapper {
@@ -135,19 +135,19 @@
 
 .sign-in-link {
   font-weight: 600;
-  color: #ecfdf3;
+  color: #f1f5f9;
   padding-inline: 1.5rem;
   padding-block: 0.5rem;
   border-radius: 999px;
-  border: 1px solid rgba(118, 185, 0, 0.3);
-  background: rgba(13, 31, 25, 0.7);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  background: rgba(30, 41, 59, 0.7);
   transition: border-color 200ms ease, color 200ms ease, transform 150ms ease;
 }
 
 .sign-in-link:hover,
 .sign-in-link:focus-visible {
-  border-color: rgba(118, 185, 0, 0.7);
-  color: #b9f5d1;
+  border-color: rgba(14, 165, 233, 0.7);
+  color: #bae6fd;
   transform: scale(1.05);
 }
 

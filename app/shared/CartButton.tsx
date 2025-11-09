@@ -89,19 +89,19 @@ const CartButton = () => {
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
-        className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-nvidia-500 to-accent-600 px-4 py-2 font-semibold text-white shadow-lg shadow-nvidia-500/30 transition hover:shadow-nvidia-500/50 hover:scale-105"
+        className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-primary-500 to-secondary-600 px-4 py-2 font-semibold text-white shadow-lg shadow-primary-500/30 transition hover:shadow-primary-500/50 hover:scale-105"
       >
         <span className="text-sm tracking-tight">Cart</span>
         <Image className="w-4 h-4" alt="cart" src={cartIcon} />
       </button>
-      <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent-400 text-xs font-bold text-white border-2 border-[#0a1612]">
+      <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent-400 text-xs font-bold text-white border-2 border-background-base shadow-md">
         {items.length >= 9 ? '9+' : items.length}
       </span>
 
       {open ? (
-        <div className="absolute right-0 top-14 w-[22rem] overflow-hidden rounded-3xl border border-accent-500/20 bg-[#0d1f19]/95 text-emerald-50 shadow-2xl backdrop-blur">
+        <div className="absolute right-0 top-14 w-[22rem] overflow-hidden rounded-3xl border border-primary-500/20 bg-background-section/95 text-slate-100 shadow-2xl backdrop-blur">
           {items.length === 0 ? (
-            <div className="flex h-48 items-center justify-center text-sm text-emerald-50/60">Your cart is empty.</div>
+            <div className="flex h-48 items-center justify-center text-sm text-slate-400">Your cart is empty.</div>
           ) : (
             <div className="max-h-72 space-y-4 overflow-y-auto px-4 py-4">
               {items.map((item, index) => {
@@ -111,17 +111,17 @@ const CartButton = () => {
                     <div className="flex items-start justify-between gap-4">
                       <Link
                         href={item.href}
-                        className="flex flex-1 gap-4 rounded-2xl bg-[#0a1612]/70 p-3 transition hover:bg-accent-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
+                        className="flex flex-1 gap-4 rounded-2xl bg-background-card/70 p-3 transition hover:bg-primary-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
                       >
-                        <div className="h-16 w-16 rounded-xl bg-[#123423]/60" />
+                        <div className="h-16 w-16 rounded-xl bg-background-base/60" />
                         <div className="flex-1 overflow-hidden">
-                          <p className="truncate text-sm font-semibold text-accent-200">{item.name}</p>
-                          <p className="mt-1 truncate text-xs text-emerald-50/70">{item.description}</p>
+                          <p className="truncate text-sm font-semibold text-primary-200">{item.name}</p>
+                          <p className="mt-1 truncate text-xs text-slate-400">{item.description}</p>
                           <p className="mt-2 text-xs font-medium text-accent-300">Qty: {item.quantity}</p>
                         </div>
                       </Link>
                       <div className="flex h-full flex-col items-end justify-between py-1">
-                        <button type="button" onClick={() => removeItem(item.id)} className="text-emerald-50/60 hover:text-accent-300 transition-colors">
+                        <button type="button" onClick={() => removeItem(item.id)} className="text-slate-400 hover:text-accent-300 transition-colors">
                           <TrashIcon />
                         </button>
                         <div className="text-sm font-semibold text-accent-300">
@@ -129,20 +129,20 @@ const CartButton = () => {
                         </div>
                       </div>
                     </div>
-                    {!isLast ? <div className="mx-auto mt-3 h-px w-3/4 bg-accent-500/20" /> : null}
+                    {!isLast ? <div className="mx-auto mt-3 h-px w-3/4 bg-primary-500/20" /> : null}
                   </div>
                 )
               })}
             </div>
           )}
-          <div className="flex items-center justify-between border-t border-accent-500/20 bg-[#0a1612]/80 px-4 py-3 text-sm">
-            <span className="text-emerald-50/70">Subtotal</span>
+          <div className="flex items-center justify-between border-t border-primary-500/20 bg-background-card/80 px-4 py-3 text-sm">
+            <span className="text-slate-400">Subtotal</span>
             <span className="font-semibold text-accent-300">${subtotal}</span>
           </div>
-          <div className="border-t border-accent-500/20 bg-[#0a1612]/80 px-4 pb-4">
+          <div className="border-t border-primary-500/20 bg-background-card/80 px-4 pb-4">
             <Link
               href="/checkout"
-              className="inline-flex w-full justify-center rounded-full bg-gradient-to-r from-nvidia-500 to-accent-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-nvidia-500/30 hover:shadow-nvidia-500/50 transition-all"
+              className="inline-flex w-full justify-center rounded-full bg-gradient-to-r from-primary-500 to-secondary-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all"
             >
               Checkout
             </Link>
