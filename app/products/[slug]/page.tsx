@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import PageHeader from '@/app/_components/PageHeader'
+import PageHeader from '@/app/shared/PageHeader'
 
 import { catalogProducts, findProductBySlug } from '../../_data/site'
 

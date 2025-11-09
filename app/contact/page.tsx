@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import PageHeader from '@/app/_components/PageHeader'
+import PageHeader from '@/app/shared/PageHeader'
 
 export const metadata: Metadata = {
   title: 'Contact',
