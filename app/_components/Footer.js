@@ -32,19 +32,20 @@ const Footer = () => {
           <h4 className="headings mb-4 text-lg font-semibold text-slate-900 animate">
             Index
           </h4>
-          <p className="animate mid">Home</p>
-          <p className="animate late">Services</p>
-          <p className="animate vlate" id="mail-in">
-            Mail In
-          </p>
+          <Link href="/" className="block animate mid hover:text-nvidia-600">Home</Link>
+          <Link href="/services" className="block animate late hover:text-nvidia-600">Services</Link>
+          <Link href="/mail-in" className="block animate vlate hover:text-nvidia-600">
+            Mail-In Repair
+          </Link>
+          <Link href="/store" className="block animate vvlate hover:text-nvidia-600">Store</Link>
         </div>
         <div className="support-wrapper pl-12">
           <h4 className="headings mb-4 text-lg font-semibold text-slate-900 animate">
             Support
           </h4>
-          <p className="animate mid">Shipping Policy</p>
-          <p className="animate late">Return Policy</p>
-          <p className="animate vlate">Privacy Policy</p>
+          <Link href="/shipping" className="block animate mid hover:text-nvidia-600">Shipping Policy</Link>
+          <Link href="/terms" className="block animate late hover:text-nvidia-600">Return Policy</Link>
+          <Link href="/privacy" className="block animate vlate hover:text-nvidia-600">Privacy Policy</Link>
         </div>
         <div className="help-wrapper pl-12">
           <h4
@@ -79,8 +80,8 @@ const Footer = () => {
               />
             </Link>
           </div>
-          <p className="animate late">About Us</p>
-          <p className="animate vlate">FAQ</p>
+          <Link href="/about" className="block animate late hover:text-nvidia-600">About Us</Link>
+          <Link href="/faq" className="block animate vlate hover:text-nvidia-600">FAQ</Link>
         </div>
       </div>
       <div className="flex justify-center w-full px-12 h-96 items-center animate late">
