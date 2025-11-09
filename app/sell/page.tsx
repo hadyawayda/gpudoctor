@@ -68,11 +68,11 @@ const SellPage = () => {
   }
 
   return (
-    <main className="bg-slate-950 text-white">
+    <main className="bg-[#07130e] text-emerald-50">
       <section className="mx-auto max-w-5xl px-6 pb-24 pt-28 lg:px-10 xl:px-16">
         <header className="space-y-6 text-balance">
           <h1 className="text-4xl font-semibold tracking-tight text-emerald-300 sm:text-5xl">Sell or consign your GPU</h1>
-          <p className="text-lg text-slate-200">
+          <p className="text-lg text-emerald-50/80">
             Tell us about your graphics card and choose whether you want a refurbish package. We&apos;ll generate an instant trade-in
             estimate, schedule a pickup, and list it on the GPU Doctor marketplace once it passes validation.
           </p>
@@ -80,7 +80,7 @@ const SellPage = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="mt-12 grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur lg:grid-cols-[1.05fr_0.95fr]"
+          className="mt-12 grid gap-8 rounded-3xl border border-emerald-500/20 bg-[#0b1f17]/70 p-8 backdrop-blur lg:grid-cols-[1.05fr_0.95fr]"
         >
           <div className="space-y-6">
             <div>
@@ -90,7 +90,7 @@ const SellPage = () => {
               <select
                 id="brand"
                 name="brand"
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
                 value={formState.brand}
                 onChange={handleChange}
               >
@@ -108,7 +108,7 @@ const SellPage = () => {
               <select
                 id="model"
                 name="model"
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
                 value={formState.model}
                 onChange={handleChange}
               >
@@ -127,7 +127,7 @@ const SellPage = () => {
                 <select
                   id="condition"
                   name="condition"
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                  className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
                   value={formState.condition}
                   onChange={handleChange}
                 >
@@ -145,7 +145,7 @@ const SellPage = () => {
                 <select
                   id="issue"
                   name="issue"
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                  className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
                   value={formState.issue}
                   onChange={handleChange}
                 >
@@ -165,7 +165,7 @@ const SellPage = () => {
                 <select
                   id="hours"
                   name="hours"
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                  className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
                   value={formState.hours}
                   onChange={handleChange}
                 >
@@ -183,7 +183,7 @@ const SellPage = () => {
                 <select
                   id="accessories"
                   name="accessories"
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                  className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
                   value={formState.accessories}
                   onChange={handleChange}
                 >
@@ -200,7 +200,7 @@ const SellPage = () => {
               <select
                 id="refurbish"
                 name="refurbish"
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
                 value={formState.refurbish}
                 onChange={handleChange}
               >
@@ -217,7 +217,7 @@ const SellPage = () => {
                 name="notes"
                 rows={4}
                 placeholder="List any modifications, cooling swaps, or previous repairs."
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white placeholder:text-slate-500"
+                className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50 placeholder:text-emerald-200/40"
                 value={formState.notes}
                 onChange={handleChange}
               />
@@ -229,16 +229,16 @@ const SellPage = () => {
               Get my trade-in estimate
             </button>
           </div>
-          <aside className="flex flex-col justify-between rounded-3xl border border-emerald-500/10 bg-slate-950/60 p-6 text-sm text-slate-200">
+          <aside className="flex flex-col justify-between rounded-3xl border border-emerald-500/20 bg-[#091810] p-6 text-sm text-emerald-50/80">
             <div>
               <h2 className="text-lg font-semibold text-emerald-200">Estimated payout</h2>
-              <p className="mt-3 text-3xl font-semibold text-white">${estimatedValue}</p>
-              <p className="mt-2 text-xs text-slate-300">
+              <p className="mt-3 text-3xl font-semibold text-emerald-50">${estimatedValue}</p>
+              <p className="mt-2 text-xs text-emerald-50/70">
                 Final payout confirmed after diagnostics. Refurbish packages can increase value up to 15%.
               </p>
             </div>
             <div className="space-y-4">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-xs text-slate-200">
+              <div className="rounded-2xl border border-emerald-500/20 bg-[#0b1f17]/70 p-4 text-xs text-emerald-50/80">
                 <p>• Free insured pickup within 24 hours in supported cities.</p>
                 <p className="mt-2">• Instant marketplace listing once refurbished or validated.</p>
                 <p className="mt-2">• Track status and offers directly from your GPU Doctor dashboard.</p>

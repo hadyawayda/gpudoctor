@@ -3,82 +3,141 @@ export type Service = {
   description: string
   price: string
   turnaround: string
-  category: 'Diagnostics' | 'Repairs' | 'Enhancements' | 'Cooling' | 'Data' | 'Enterprise'
+  category:
+    | 'Diagnostics'
+    | 'Repairs'
+    | 'Cooling'
+    | 'Maintenance'
+    | 'Refurbishment'
+    | 'Certification'
+    | 'Enhancements'
   badge?: string
 }
 
 export const serviceCatalog: Service[] = [
   {
-    name: 'Graphene thermal rebuild',
-    description: 'Replace degraded pads, lap heatsinks, and reseat the GPU die for double-digit thermal drops.',
-    price: '$159',
-    turnaround: '2-3 days',
-    category: 'Cooling',
-    badge: 'Popular',
+    name: 'Diagnostic bench evaluation',
+    description:
+      'Full intake assessment covering power rails, memory, and visual inspection. The $89 fee is credited when you approve the repair.',
+    price: '$89 diagnostic fee',
+    turnaround: 'Detailed report within 48 hours',
+    category: 'Diagnostics',
+    badge: 'Required first step',
   },
   {
-    name: 'Deep-dive diagnostics',
-    description: 'Scope VRM rails, run memory BIST, and generate a shareable failure report within 24 hours.',
-    price: '$89',
-    turnaround: '24 hours',
+    name: 'Advanced failure analysis',
+    description:
+      'Oscilloscope captures, micro-fracture checks, and firmware validation for stubborn intermittent faults.',
+    price: '$149',
+    turnaround: 'Comprehensive findings in 72 hours',
     category: 'Diagnostics',
   },
   {
-    name: 'Micro-soldering repair',
-    description: 'Component-level fixes for blown MOSFETs, shorted caps, or cracked traces under microscope guidance.',
-    price: 'From $189',
-    turnaround: '4-5 days',
+    name: 'Standard repair workflow',
+    description:
+      'Board-level repairs, component swaps, and validation. Standard queue completes within the 6-week service window.',
+    price: 'Quoted after diagnostics',
+    turnaround: 'Up to 6 weeks',
     category: 'Repairs',
   },
   {
-    name: 'VBIOS calibration & unlock',
-    description: 'Safely update firmware, tune power tables, and validate boost clocks with a 12-hour stress profile.',
-    price: '$129',
-    turnaround: '2 days',
-    category: 'Enhancements',
+    name: 'Expedited 7-day repair lane',
+    description:
+      'Priority handling with daily updates. We complete approved work within 7 calendar days or refund the rush fee.',
+    price: '$199 rush add-on',
+    turnaround: '7-day turnaround guaranteed',
+    category: 'Repairs',
+    badge: 'Expedited',
   },
   {
-    name: 'Data center rapid swap',
-    description: 'Rack-friendly swap kits and overnight board-level repair SLA for render farms and inference clusters.',
-    price: 'Custom quote',
-    turnaround: 'Same-day dispatch',
-    category: 'Enterprise',
-    badge: 'SLA',
-  },
-  {
-    name: 'Artifact remediation',
-    description: 'Reball memory modules, retime signal traces, and soak-test to eliminate crashing or artifacting.',
-    price: '$249',
-    turnaround: '6 days',
+    name: 'Precision micro-soldering',
+    description:
+      'Replace failed MOSFETs, memory, or traces under microscope guidance with conformal coating touch-up.',
+    price: 'From $219',
+    turnaround: '10-14 days (standard lane)',
     category: 'Repairs',
   },
   {
-    name: 'AI workstation optimisation',
-    description: 'Thermal, firmware, and driver tuning specifically profiled for AI/ML and CUDA workloads.',
-    price: '$199',
-    turnaround: '3 days',
-    category: 'Enhancements',
-  },
-  {
-    name: 'Immersion loop integration',
-    description: 'Prep GPUs for immersion cooling, apply conformal coating, and validate leak-free operation.',
-    price: '$329',
-    turnaround: '7 days',
+    name: 'Thermal paste refresh',
+    description:
+      'Remove old compounds, clean contact surfaces, and apply premium paste tuned for your workload.',
+    price: '$59',
+    turnaround: '24-hour return',
     category: 'Cooling',
   },
   {
-    name: 'Data recovery & cloning',
-    description: 'Recover mining farm BIOS mods, clone configs, and archive tuning profiles securely.',
-    price: '$99',
-    turnaround: '48 hours',
-    category: 'Data',
+    name: 'Thermal pad replacement',
+    description:
+      'Replace and profile all memory and VRM pads using measured thickness for even pressure.',
+    price: '$89',
+    turnaround: '2 days',
+    category: 'Cooling',
   },
   {
-    name: 'Extended burn-in certification',
-    description: '72-hour thermal chambers with live telemetry exports for mission critical deployments.',
-    price: '$149',
+    name: 'Complete thermal overhaul',
+    description:
+      'Combine paste and pad services with heatsink resurfacing to restore factory or better thermals.',
+    price: '$129',
     turnaround: '3 days',
-    category: 'Enterprise',
+    category: 'Cooling',
+    badge: 'Bundle & save',
+  },
+  {
+    name: 'Preventive maintenance service',
+    description:
+      'Deep cleaning, firmware updates, and health checks ideal for rigs approaching warranty end.',
+    price: '$109',
+    turnaround: '3-4 days',
+    category: 'Maintenance',
+  },
+  {
+    name: 'Scheduled maintenance plan',
+    description:
+      'Four on-the-calendar tune-ups per year with priority booking and service reminders.',
+    price: '$349 annual plan',
+    turnaround: 'Quarterly appointments',
+    category: 'Maintenance',
+  },
+  {
+    name: 'Refurbishment package',
+    description:
+      'Cosmetic restoration, fan replacement, and final validation that qualifies hardware for certified resale.',
+    price: '$189',
+    turnaround: '10 days',
+    category: 'Refurbishment',
+  },
+  {
+    name: 'Refurbish add-on for marketplace sales',
+    description:
+      'Add to any marketplace sale for packaging, photography, and certification before shipment.',
+    price: '$69',
+    turnaround: '3 days before dispatch',
+    category: 'Refurbishment',
+  },
+  {
+    name: 'GPU Doctor Certified inspection',
+    description:
+      'Documented inspection that awards the GPU Doctor Certified badge and one-week workmanship warranty.',
+    price: '$79',
+    turnaround: '48 hours',
+    category: 'Certification',
+    badge: 'Certification badge',
+  },
+  {
+    name: 'Warranty extension upgrade',
+    description:
+      'Extend the included 7-day repair warranty to 6 weeks with transferability for resale.',
+    price: '$59 add-on',
+    turnaround: 'Activates on repair completion',
+    category: 'Certification',
+  },
+  {
+    name: 'Performance re-tuning',
+    description:
+      'Driver calibration, fan curve programming, and stress testing matched to your workloads.',
+    price: '$129',
+    turnaround: '3 days',
+    category: 'Enhancements',
   },
 ]
 
@@ -90,30 +149,30 @@ export type RepairMilestone = {
 
 export const repairMilestones: RepairMilestone[] = [
   {
-    title: 'Smart intake',
-    description: 'Upload your GPU symptoms, crash logs, and photos. Our intake AI pre-screens likely failure domains.',
-    tip: 'Supports RTX, Radeon, and workstation boards with automatic warranty lookup.',
+    title: 'Secure intake',
+    description: 'Submit symptoms, photos, and proof of ownership. We log every detail so your rights stay documented from day one.',
+    tip: 'Diagnostic fees are paid upfront and credited when you approve the repair quote.',
   },
   {
     title: 'Precision diagnostics',
-    description: 'Technicians run oscilloscope captures, memory BIST, and thermal imaging to isolate faults.',
+    description: 'Technicians scope power rails, inspect solder joints, and run memory tests to isolate the fault.',
   },
   {
     title: 'Transparent approval',
-    description: 'You receive a video walkthrough, line-item quote, and optional upgrade suggestions before work begins.',
+    description: 'You receive a written quote detailing labour, parts, rush options, and warranty choices before any work begins.',
   },
   {
     title: 'Certified repair',
-    description: 'Micro-soldering, component swaps, and firmware tuning executed in an ISO-7 clean workstation.',
+    description: 'Board-level work, component swaps, and thermal services are performed by senior technicians with documented steps.',
   },
   {
     title: 'Stress validation',
-    description: 'We publish telemetry dashboards from 3DMark, FurMark, and CUDA workloads to verify stability.',
+    description: 'Every GPU runs through stress and thermal validation with the results stored in your customer portal.',
   },
   {
     title: 'White-glove return',
-    description: 'Insured shipping with tamper seals, lifetime service history, and proactive maintenance reminders.',
-    tip: 'Enterprise customers can schedule on-site install and rack integration assistance.',
+    description: 'We repackage with new tamper seals, update your warranty record, and ship using insured, trackable carriers.',
+    tip: 'Expedited jobs ship priority overnight; standard jobs follow the 6-week processing timeline.',
   },
 ]
 
@@ -365,12 +424,19 @@ export type MarketplaceListing = {
   brand: string
   model: string
   price: string
+  priceValue: number
   condition: 'Used' | 'Refurbished'
   location: string
   refurbishedByDoctor: boolean
   description: string
   stats: string
   includesRefurbOption?: boolean
+  chipset: string
+  fanCount: number
+  coolerType: 'Air' | 'Liquid' | 'Hybrid'
+  memory: string
+  powerConnector: string
+  lengthMm: number
 }
 
 export const marketplaceListings: MarketplaceListing[] = [
@@ -380,11 +446,18 @@ export const marketplaceListings: MarketplaceListing[] = [
     brand: 'EVGA',
     model: 'RTX 4090 HydroCopper',
     price: '$1,549',
+    priceValue: 1549,
     condition: 'Refurbished',
     location: 'Austin Lab',
     refurbishedByDoctor: true,
-    description: 'Loop-flushed, pad-upgraded, and shipped with GPU Doctor 12-month platinum warranty.',
+    description: 'Loop-flushed, pad-upgraded, and shipped with GPU Doctor documentation for your records.',
     stats: 'Passed 72h loop with <65°C core temps in Time Spy Extreme.',
+    chipset: 'NVIDIA Ada Lovelace',
+    fanCount: 0,
+    coolerType: 'Liquid',
+    memory: '24GB GDDR6X',
+    powerConnector: 'Dual 8-pin',
+    lengthMm: 280,
   },
   {
     id: 'mkp-3080-ti',
@@ -392,12 +465,19 @@ export const marketplaceListings: MarketplaceListing[] = [
     brand: 'ASUS',
     model: 'RTX 3080 Ti',
     price: '$699',
+    priceValue: 699,
     condition: 'Used',
     location: 'Seattle Hub',
     refurbishedByDoctor: false,
     includesRefurbOption: true,
     description: 'Single owner card with minor cosmetic wear. Eligible for same-day refurbish add-on before shipping.',
     stats: 'User-logged 520 gaming hours. No prior repairs logged in GPU Doctor system.',
+    chipset: 'NVIDIA Ampere',
+    fanCount: 3,
+    coolerType: 'Air',
+    memory: '12GB GDDR6X',
+    powerConnector: '3x 8-pin',
+    lengthMm: 318,
   },
   {
     id: 'mkp-6800-xt',
@@ -405,11 +485,18 @@ export const marketplaceListings: MarketplaceListing[] = [
     brand: 'AMD',
     model: 'RX 6800 XT',
     price: '$529',
+    priceValue: 529,
     condition: 'Refurbished',
     location: 'Toronto Lab',
     refurbishedByDoctor: true,
     description: 'Reballed memory modules and replaced fans. Ships with new thermal pads and stress-test report.',
     stats: '3DMark Speed Way score +6% vs stock reference.',
+    chipset: 'AMD RDNA 2',
+    fanCount: 3,
+    coolerType: 'Air',
+    memory: '16GB GDDR6',
+    powerConnector: '2x 8-pin',
+    lengthMm: 267,
   },
   {
     id: 'mkp-quadro-rtx-6000',
@@ -417,51 +504,18 @@ export const marketplaceListings: MarketplaceListing[] = [
     brand: 'NVIDIA',
     model: 'RTX 6000 Ada',
     price: '$3,999',
+    priceValue: 3999,
     condition: 'Refurbished',
     location: 'Remote Warehouse',
     refurbishedByDoctor: true,
-    description: 'Enterprise lease return with full stress validation, includes optional rack integration service.',
+    description: 'Enterprise lease return with full stress validation and documentation for insurance compliance.',
     stats: 'NvML health: 100% | ECC corrected: 0 | VRAM remapped modules: 0.',
-  },
-]
-
-export type TechnicianListing = {
-  id: string
-  component: string
-  quantity: number
-  price: string
-  supplier: string
-  contact: string
-  note: string
-}
-
-export const technicianListings: TechnicianListing[] = [
-  {
-    id: 'ic-hynix-16gb',
-    component: 'Hynix H56C8H24AIR 16Gb GDDR6',
-    quantity: 42,
-    price: '$18 / unit',
-    supplier: 'Voltwave Electronics',
-    contact: 'voltwave.parts@example.com',
-    note: 'BGA packaged, ready for reballing. Includes lead-free solder spheres on request.',
-  },
-  {
-    id: 'ic-ncp302155',
-    component: 'OnSemi NCP302155 VRM Controller',
-    quantity: 68,
-    price: '$9 / unit',
-    supplier: 'MicroForge Labs',
-    contact: 'forge.ic@example.com',
-    note: 'Pulled from donor boards, tested on GPU Doctor diagnostic rig.',
-  },
-  {
-    id: 'ic-fan-kit',
-    component: 'Triple Axial Fan Kit – RTX 30 Series',
-    quantity: 25,
-    price: '$45 / kit',
-    supplier: 'Nordic Cooling Co.',
-    contact: 'nordic.parts@example.com',
-    note: 'Includes shroud screws and thermal pads pre-cut to OEM spec.',
+    chipset: 'NVIDIA Ada Lovelace',
+    fanCount: 1,
+    coolerType: 'Air',
+    memory: '48GB GDDR6 ECC',
+    powerConnector: 'Single 8-pin',
+    lengthMm: 267,
   },
 ]
 
@@ -478,34 +532,34 @@ export type RepairHistoryEntry = {
 
 export const repairHistory: RepairHistoryEntry[] = [
   {
-    id: 'REQ-2406-231',
-    submitted: 'Jun 02, 2024',
+    id: 'REQ-2409-104',
+    submitted: 'Sep 04, 2024',
     device: 'MSI GeForce RTX 3080 Gaming X Trio',
-    issue: 'Artifacts after 20 minutes of gameplay',
-    service: 'Artifact remediation',
+    issue: 'Artifacts after extended gameplay',
+    service: 'Precision micro-soldering',
     status: 'Ready for Pickup',
     cost: '$249',
-    warrantyEnds: 'Jun 02, 2025',
+    warrantyEnds: 'Sep 11, 2024 (extended to Oct 16 with upgrade)',
   },
   {
-    id: 'REQ-2405-118',
-    submitted: 'May 18, 2024',
+    id: 'REQ-2408-312',
+    submitted: 'Aug 22, 2024',
     device: 'Gigabyte RTX 4090 WindForce',
     issue: '12VHPWR connector overheating',
-    service: 'Graphene thermal rebuild',
+    service: 'Complete thermal overhaul + rush lane',
     status: 'Shipped',
-    cost: '$159',
-    warrantyEnds: 'May 18, 2025',
+    cost: '$328',
+    warrantyEnds: 'Aug 29, 2024',
   },
   {
-    id: 'REQ-2404-502',
-    submitted: 'Apr 27, 2024',
+    id: 'REQ-2407-087',
+    submitted: 'Jul 15, 2024',
     device: 'Sapphire Nitro+ RX 7900 XT',
-    issue: 'Driver crashes during Blender renders',
-    service: 'AI workstation optimisation',
+    issue: 'Random black screens under render load',
+    service: 'Diagnostic bench evaluation',
     status: 'In Repair',
-    cost: '$199',
-    warrantyEnds: 'Apr 27, 2025',
+    cost: '$89 (credited at approval)',
+    warrantyEnds: 'Pending approval',
   },
 ]
 
@@ -729,59 +783,59 @@ export const builderPresets: BuilderPreset[] = [
 ]
 
 export const landingMetrics = [
-  { label: 'GPUs revived', value: '18,400+', emphasis: 'Across gaming, AI, and broadcast rigs.' },
-  { label: 'Average turnaround', value: '3.2 days', emphasis: 'From diagnosis approval to burn-in complete.' },
-  { label: 'Warranty coverage', value: '24 months', emphasis: 'On every GPU Doctor refurb or repair.' },
+  { label: 'GPUs revived', value: '18,400+', emphasis: 'Across gaming, workstation, and broadcast fleets since 2014.' },
+  { label: 'Rush completion rate', value: '98%', emphasis: 'Expedited jobs finished inside the 7-day promise.' },
+  { label: 'Warranty claims', value: '<1%', emphasis: 'All repairs include a 7-day warranty with 6-week extensions available.' },
 ]
 
 export const landingHighlights = [
   {
-    title: 'GPU-native expertise',
+    title: 'Technicians who advocate for you',
     description:
-      'Dedicated engineers for Ada, RDNA, and Hopper architectures with board-level schematics on tap.',
+      'Every job is documented with photos, notes, and parts lists so you always have evidence of the work performed.',
   },
   {
-    title: 'AI-assisted troubleshooting',
+    title: 'Clear pricing & timelines',
     description:
-      'Our Atlas assistant parses crash dumps, suggests fixes, and keeps you updated in conversational threads.',
+      'Diagnostic fees are published, standard repairs target a 6-week window, and expedited upgrades deliver in seven days.',
   },
   {
-    title: 'Sustainable performance',
+    title: 'Certified results',
     description:
-      'Refurbish or trade-in options keep silicon in circulation and reduce e-waste for the community.',
+      'Thermal services, refurbishments, and certification badges protect your resale value and keep warranties intact.',
   },
 ]
 
 export const forumHighlights = [
   {
-    name: 'Signal Integrity Lab',
-    description: 'Discuss probing, firmware mods, and PCB repairs with certified technicians.',
+    name: 'Policy & rights library',
+    description: 'Understand your protections, privacy controls, and dispute process before you book a service.',
   },
   {
-    name: 'Marketplace Watch',
-    description: 'Track new trade-ins, price trends, and community group buys in real time.',
+    name: 'Repair playbooks',
+    description: 'Step-by-step guides that explain how we handle diagnostics, repairs, and refurbishments.',
   },
   {
-    name: 'Atlas AI Copilot',
-    description: 'Chatbot subdomain that answers troubleshooting questions and creates RMA-ready logs automatically.',
+    name: 'Maintenance scheduler',
+    description: 'Set reminders for thermal service, warranty deadlines, and portal notifications.',
   },
 ]
 
 export const landingCtas = [
   {
-    title: 'Start a repair request',
+    title: 'Schedule a repair',
     href: '/repair-requests',
-    description: 'Book diagnostics, approve quotes, and monitor telemetry from your dashboard.',
+    description: 'Submit your intake, choose rush options, and track the 6-week or 7-day timeline in writing.',
   },
   {
-    title: 'Browse the GPU marketplace',
-    href: '/marketplace',
-    description: 'Buy and sell certified GPUs with optional refurbish add-ons.',
+    title: 'Visit the store & marketplace',
+    href: '/store',
+    description: 'Shop certified GPUs, accessories, and refurb packages with detailed filters.',
   },
   {
-    title: 'Design your next PC build',
+    title: 'Build your PC plan',
     href: '/builds',
-    description: 'Choose each component and see how it fits inside curated showcase cases.',
+    description: 'Curate compatible components and export parts lists to your customer portal.',
   },
 ]
 

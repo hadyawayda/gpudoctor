@@ -103,9 +103,9 @@ const CartButton = () => {
       </span>
 
       {open ? (
-        <div className="absolute right-0 top-14 w-[22rem] overflow-hidden rounded-3xl border border-white/10 bg-slate-900/95 text-white shadow-2xl backdrop-blur">
+        <div className="absolute right-0 top-14 w-[22rem] overflow-hidden rounded-3xl border border-emerald-500/20 bg-[#05160e]/95 text-emerald-50 shadow-2xl backdrop-blur">
           {items.length === 0 ? (
-            <div className="flex h-48 items-center justify-center text-sm text-slate-300">Your cart is empty.</div>
+            <div className="flex h-48 items-center justify-center text-sm text-emerald-50/60">Your cart is empty.</div>
           ) : (
             <div className="max-h-72 space-y-4 overflow-y-auto px-4 py-4">
               {items.map((item, index) => {
@@ -115,35 +115,35 @@ const CartButton = () => {
                     <div className="flex items-start justify-between gap-4">
                       <Link
                         href={item.href}
-                        className="flex flex-1 gap-4 rounded-2xl bg-white/5 p-3 transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                        className="flex flex-1 gap-4 rounded-2xl bg-[#0b1f17]/70 p-3 transition hover:bg-emerald-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
                       >
-                        <div className="h-16 w-16 rounded-xl bg-slate-800/60" />
+                        <div className="h-16 w-16 rounded-xl bg-[#123423]/60" />
                         <div className="flex-1 overflow-hidden">
-                          <p className="truncate text-sm font-semibold text-white">{item.name}</p>
-                          <p className="mt-1 truncate text-xs text-slate-300">{item.description}</p>
+                          <p className="truncate text-sm font-semibold text-emerald-100">{item.name}</p>
+                          <p className="mt-1 truncate text-xs text-emerald-50/70">{item.description}</p>
                           <p className="mt-2 text-xs font-medium text-emerald-200">Qty: {item.quantity}</p>
                         </div>
                       </Link>
                       <div className="flex h-full flex-col items-end justify-between py-1">
-                        <button type="button" onClick={() => removeItem(item.id)} className="text-slate-400 hover:text-emerald-200">
+                        <button type="button" onClick={() => removeItem(item.id)} className="text-emerald-50/60 hover:text-emerald-200">
                           <TrashIcon />
                         </button>
-                        <div className="text-sm font-semibold text-emerald-300">
+                        <div className="text-sm font-semibold text-emerald-200">
                           ${Number((item.price * item.quantity).toFixed(2))}
                         </div>
                       </div>
                     </div>
-                    {!isLast ? <div className="mx-auto mt-3 h-px w-3/4 bg-white/10" /> : null}
+                    {!isLast ? <div className="mx-auto mt-3 h-px w-3/4 bg-emerald-500/20" /> : null}
                   </div>
                 )
               })}
             </div>
           )}
-          <div className="flex items-center justify-between border-t border-white/10 bg-slate-900/80 px-4 py-3 text-sm">
-            <span className="text-slate-300">Subtotal</span>
-            <span className="font-semibold text-emerald-300">${subtotal}</span>
+          <div className="flex items-center justify-between border-t border-emerald-500/20 bg-[#05160e]/80 px-4 py-3 text-sm">
+            <span className="text-emerald-50/70">Subtotal</span>
+            <span className="font-semibold text-emerald-200">${subtotal}</span>
           </div>
-          <div className="border-t border-white/10 bg-slate-900/80 px-4 pb-4">
+          <div className="border-t border-emerald-500/20 bg-[#05160e]/80 px-4 pb-4">
             <Link
               href="/checkout"
               className="inline-flex w-full justify-center rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:from-emerald-300 hover:via-cyan-300 hover:to-sky-400"
