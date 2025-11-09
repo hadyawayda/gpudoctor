@@ -68,9 +68,9 @@ const StoreContent = ({ products }: { products: CatalogProduct[] }) => {
   return (
     <section className="mx-auto max-w-6xl px-6 pb-24 lg:px-10 xl:px-16">
       <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-        <form className="space-y-6 rounded-3xl border border-emerald-500/20 bg-[#0b1f17]/70 p-6 text-sm text-emerald-50/80">
+        <form className="space-y-6 rounded-3xl border border-primary-500/20 bg-background-section/70 p-6 text-sm text-slate-100/80">
           <div>
-            <label className="text-sm font-semibold text-emerald-200" htmlFor="store-search">
+            <label className="text-sm font-semibold text-primary-300" htmlFor="store-search">
               Search inventory
             </label>
             <input
@@ -79,20 +79,20 @@ const StoreContent = ({ products }: { products: CatalogProduct[] }) => {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search by product name or model"
-              className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50 placeholder:text-emerald-200/40"
+              className="mt-2 w-full rounded-2xl border border-primary-500/20 bg-background-card px-4 py-3 text-sm text-slate-100 placeholder:text-slate-400"
             />
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="store-brand">
+              <label className="text-sm font-semibold text-primary-300" htmlFor="store-brand">
                 Brand
               </label>
               <select
                 id="store-brand"
                 value={brand}
                 onChange={(event) => setBrand(event.target.value)}
-                className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
+                className="mt-2 w-full rounded-2xl border border-primary-500/20 bg-background-card px-4 py-3 text-sm text-slate-100"
               >
                 <option value="All">All brands</option>
                 {brands.map((value) => (
@@ -103,14 +103,14 @@ const StoreContent = ({ products }: { products: CatalogProduct[] }) => {
               </select>
             </div>
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="store-category">
+              <label className="text-sm font-semibold text-primary-300" htmlFor="store-category">
                 Category
               </label>
               <select
                 id="store-category"
                 value={category}
                 onChange={(event) => setCategory(event.target.value)}
-                className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
+                className="mt-2 w-full rounded-2xl border border-primary-500/20 bg-background-card px-4 py-3 text-sm text-slate-100"
               >
                 <option value="All">All categories</option>
                 {categories.map((value) => (
@@ -121,14 +121,14 @@ const StoreContent = ({ products }: { products: CatalogProduct[] }) => {
               </select>
             </div>
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="store-condition">
+              <label className="text-sm font-semibold text-primary-300" htmlFor="store-condition">
                 Condition
               </label>
               <select
                 id="store-condition"
                 value={condition}
                 onChange={(event) => setCondition(event.target.value)}
-                className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
+                className="mt-2 w-full rounded-2xl border border-primary-500/20 bg-background-card px-4 py-3 text-sm text-slate-100"
               >
                 <option value="All">All conditions</option>
                 <option value="New">New</option>
@@ -137,14 +137,14 @@ const StoreContent = ({ products }: { products: CatalogProduct[] }) => {
               </select>
             </div>
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="store-availability">
+              <label className="text-sm font-semibold text-primary-300" htmlFor="store-availability">
                 Availability
               </label>
               <select
                 id="store-availability"
                 value={availability}
                 onChange={(event) => setAvailability(event.target.value)}
-                className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
+                className="mt-2 w-full rounded-2xl border border-primary-500/20 bg-background-card px-4 py-3 text-sm text-slate-100"
               >
                 <option value="All">All statuses</option>
                 <option value="In Stock">In Stock</option>
@@ -155,8 +155,8 @@ const StoreContent = ({ products }: { products: CatalogProduct[] }) => {
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-emerald-200">Price range</p>
-            <div className="mt-3 flex items-center justify-between text-xs text-emerald-200/80">
+            <p className="text-sm font-semibold text-primary-300">Price range</p>
+            <div className="mt-3 flex items-center justify-between text-xs text-primary-300/80">
               <span>${priceRange[0]}</span>
               <span>${priceRange[1]}</span>
             </div>
@@ -182,36 +182,36 @@ const StoreContent = ({ products }: { products: CatalogProduct[] }) => {
         </form>
 
         <div className="space-y-6">
-          <header className="flex flex-col gap-3 rounded-3xl border border-emerald-500/20 bg-[#0b1f17]/70 p-6 sm:flex-row sm:items-end sm:justify-between">
+          <header className="flex flex-col gap-3 rounded-3xl border border-primary-500/20 bg-background-section/70 p-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <h2 className="text-xl font-semibold text-emerald-200">{filteredProducts.length} products</h2>
-              <p className="text-sm text-emerald-50/70">
+              <h2 className="text-xl font-semibold text-primary-300">{filteredProducts.length} products</h2>
+              <p className="text-sm text-slate-100/70">
                 These listings are stocked by GPU Doctor and include documentation for warranty claims and resale. Add optional installation or maintenance services at checkout.
               </p>
             </div>
             <Link
               href="/services"
-              className="inline-flex items-center text-xs font-semibold text-emerald-100 hover:text-emerald-50"
+              className="inline-flex items-center text-xs font-semibold text-primary-200 hover:text-slate-100"
             >
               Explore service add-ons →
             </Link>
           </header>
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {filteredProducts.map((product) => (
-              <article key={product.slug} className="rounded-3xl border border-emerald-500/20 bg-[#0b1f17]/70 p-6">
-                <div className="relative mb-4 h-48 overflow-hidden rounded-2xl border border-emerald-500/20 bg-[#091810]">
+              <article key={product.slug} className="rounded-3xl border border-primary-500/20 bg-background-section/70 p-6">
+                <div className="relative mb-4 h-48 overflow-hidden rounded-2xl border border-primary-500/20 bg-background-card">
                   <Image src={product.images[0]} alt={product.name} fill className="object-cover" />
                 </div>
-                <div className="flex items-center justify-between text-xs text-emerald-200/80">
+                <div className="flex items-center justify-between text-xs text-primary-300/80">
                   <span>{product.brand}</span>
                   <span>{product.condition}</span>
                 </div>
-                <h2 className="mt-3 text-lg font-semibold text-emerald-100">{product.name}</h2>
-                <p className="mt-1 text-sm text-emerald-50/75">{product.model}</p>
-                <p className="mt-3 text-xs text-emerald-50/60">{product.tags.join(' • ')}</p>
+                <h2 className="mt-3 text-lg font-semibold text-primary-200">{product.name}</h2>
+                <p className="mt-1 text-sm text-slate-100/75">{product.model}</p>
+                <p className="mt-3 text-xs text-slate-100/60">{product.tags.join(' • ')}</p>
                 <div className="mt-4 flex items-center justify-between">
-                  <span className="text-lg font-semibold text-emerald-200">${product.price}</span>
-                  <Link href={`/products/${product.slug}`} className="text-xs font-semibold text-emerald-100 hover:text-emerald-50">
+                  <span className="text-lg font-semibold text-primary-300">${product.price}</span>
+                  <Link href={`/products/${product.slug}`} className="text-xs font-semibold text-primary-200 hover:text-slate-100">
                     View details →
                   </Link>
                 </div>

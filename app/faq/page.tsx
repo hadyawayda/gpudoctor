@@ -41,17 +41,17 @@ export const metadata: Metadata = {
 
 const FAQPage = () => {
   return (
-    <main className="bg-[#07130e] text-emerald-50">
+    <main className="bg-background-base text-slate-100">
       <PageHeader
         title="Frequently asked questions"
         description="Get clarity on diagnostics, turnaround expectations, warranties, and how GPU Doctor protects your hardware throughout the process."
       />
       <section className="mx-auto max-w-5xl px-6 pb-24 lg:px-10 xl:px-16">
-        <dl className="space-y-6 text-sm leading-7 text-emerald-50/80">
+        <dl className="space-y-6 text-sm leading-7 text-slate-300">
           {FAQS.map(({ question, answer }) => (
-            <div key={question} className="rounded-3xl border border-emerald-500/20 bg-[#0b1f17]/70 p-6">
-              <dt className="text-lg font-semibold text-emerald-200">{question}</dt>
-              <dd className="mt-3 text-sm text-emerald-50/80">{answer}</dd>
+            <div key={question} className="rounded-3xl border border-primary-500/20 bg-background-section/70 p-6">
+              <dt className="text-lg font-semibold text-primary-300">{question}</dt>
+              <dd className="mt-3 text-sm text-slate-300">{answer}</dd>
             </div>
           ))}
         </dl>
