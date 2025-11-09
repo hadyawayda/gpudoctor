@@ -1,19 +1,8 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 import Footer from './_components/Footer'
 import Navbar from './_components/Navbar'
-
-type ViewportConfig = {
-  width?: string | number
-  height?: string | number
-  initialScale?: number
-  minimumScale?: number
-  maximumScale?: number
-  userScalable?: boolean
-  viewportFit?: 'auto' | 'cover' | 'contain'
-  interactiveWidget?: 'resizes-visual' | 'resizes-content' | 'overlays-content'
-}
 
 export const metadata: Metadata = {
   title: {
@@ -24,7 +13,7 @@ export const metadata: Metadata = {
     'Expert GPU diagnostics, repairs, and performance upgrades delivered with meticulous attention to detail.',
 }
 
-export const viewport: ViewportConfig = {
+export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
 }
