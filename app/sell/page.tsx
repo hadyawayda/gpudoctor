@@ -10,8 +10,19 @@ const uniqueBrands = Array.from(new Set(gpuOptions.map((product) => product.bran
 const conditionOptions = ['Mint', 'Lightly used', 'Needs repair', 'Not working'] as const
 const issueTypes = ['Thermal throttling', 'Artifacts', 'Power failure', 'No display', 'Driver instability', 'Other'] as const
 
+type FormState = {
+  brand: string
+  model: string
+  condition: (typeof conditionOptions)[number]
+  issue: (typeof issueTypes)[number]
+  hours: string
+  accessories: string
+  refurbish: string
+  notes: string
+}
+
 const SellPage = () => {
-  const [formState, setFormState] = useState({
+  const [formState, setFormState] = useState<FormState>({
     brand: uniqueBrands[0] ?? 'NVIDIA',
     model: gpuOptions[0]?.model ?? 'Unknown',
     condition: conditionOptions[0],

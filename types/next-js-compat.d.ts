@@ -1,3 +1,11 @@
 declare module 'next/types.js' {
-  export * from 'next/types'
+  export type {
+    Metadata,
+    MetadataRoute,
+    ResolvedMetadata,
+    ResolvingMetadata,
+    Viewport,
+    ResolvingViewport,
+    ResolvedViewport,
+  } from 'next'
 }
