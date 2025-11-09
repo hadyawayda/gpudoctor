@@ -9,36 +9,16 @@ const gpuOptions = catalogProducts.filter((product) => product.category === 'GPU
 const uniqueBrands = Array.from(new Set(gpuOptions.map((product) => product.brand))).sort()
 const conditionOptions = ['Mint', 'Lightly used', 'Needs repair', 'Not working'] as const
 const issueTypes = ['Thermal throttling', 'Artifacts', 'Power failure', 'No display', 'Driver instability', 'Other'] as const
-const usageRanges = ['0-500', '500-1000', '1000-2000', '2000+'] as const
-const accessoryOptions = ['original-box', 'card-only', 'extras'] as const
-const refurbishChoices = ['yes', 'no'] as const
-
-type ConditionOption = (typeof conditionOptions)[number]
-type IssueType = (typeof issueTypes)[number]
-type UsageRange = (typeof usageRanges)[number]
-type AccessoryOption = (typeof accessoryOptions)[number]
-type RefurbishChoice = (typeof refurbishChoices)[number]
-
-type SellFormState = {
-  brand: string
-  model: string
-  condition: ConditionOption
-  issue: IssueType
-  hours: UsageRange
-  accessories: AccessoryOption
-  refurbish: RefurbishChoice
-  notes: string
-}
 
 const SellPage = () => {
-  const [formState, setFormState] = useState<SellFormState>({
+  const [formState, setFormState] = useState({
     brand: uniqueBrands[0] ?? 'NVIDIA',
     model: gpuOptions[0]?.model ?? 'Unknown',
     condition: conditionOptions[0],
     issue: issueTypes[0],
-    hours: usageRanges[0],
-    accessories: accessoryOptions[0],
-    refurbish: refurbishChoices[0],
+    hours: '0-500',
+    accessories: 'original-box',
+    refurbish: 'yes',
     notes: '',
   })
   const [submitted, setSubmitted] = useState(false)
@@ -64,19 +44,11 @@ const SellPage = () => {
   const handleChange = (event: ChangeEvent<HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target
 
-    setFormState((state) => {
-      const key = name as keyof SellFormState
-      const nextState = {
-        ...state,
-        [key]: value,
-      } as SellFormState
-
-      if (key === 'brand') {
-        nextState.model = gpuOptions.find((product) => product.brand === value)?.model ?? state.model
-      }
-
-      return nextState
-    })
+    setFormState((state) => ({
+      ...state,
+      [name]: value,
+      ...(name === 'brand' ? { model: gpuOptions.find((product) => product.brand === value)?.model ?? state.model } : null),
+    }))
   }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -186,7 +158,7 @@ const SellPage = () => {
                   value={formState.hours}
                   onChange={handleChange}
                 >
-                  {usageRanges.map((range) => (
+                  {['0-500', '500-1000', '1000-2000', '2000+'].map((range) => (
                     <option key={range} value={range}>
                       {range}
                     </option>
@@ -204,15 +176,9 @@ const SellPage = () => {
                   value={formState.accessories}
                   onChange={handleChange}
                 >
-                  {accessoryOptions.map((option) => (
-                    <option key={option} value={option}>
-                      {option === 'original-box'
-                        ? 'Original box & cables'
-                        : option === 'card-only'
-                          ? 'GPU only'
-                          : 'Includes water block / extras'}
-                    </option>
-                  ))}
+                  <option value="original-box">Original box &amp; cables</option>
+                  <option value="card-only">GPU only</option>
+                  <option value="extras">Includes water block / extras</option>
                 </select>
               </div>
             </div>
@@ -227,11 +193,8 @@ const SellPage = () => {
                 value={formState.refurbish}
                 onChange={handleChange}
               >
-                {refurbishChoices.map((choice) => (
-                  <option key={choice} value={choice}>
-                    {choice === 'yes' ? 'Yes – add GPU Doctor refurbish package' : 'No – list as-is'}
-                  </option>
-                ))}
+                <option value="yes">Yes – add GPU Doctor refurbish package</option>
+                <option value="no">No – list as-is</option>
               </select>
             </div>
             <div>
