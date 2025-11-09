@@ -56,12 +56,12 @@ const HamMenu = () => {
           <button
             type="button"
             aria-label="Close navigation menu"
-            className="absolute inset-0 h-full w-full bg-slate-900/30 backdrop-blur-sm"
+            className="absolute inset-0 h-full w-full bg-black/40 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           />
           <div className="absolute inset-0 flex items-start justify-end">
-            <div className="min-h-full w-[min(20rem,calc(100vw-2.5rem))] bg-slate-950 text-white shadow-2xl ring-1 ring-white/10">
-              <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
+            <div className="min-h-full w-[min(20rem,calc(100vw-2.5rem))] bg-[color:var(--surface-900)] text-[color:var(--text-base)] shadow-2xl ring-1 ring-[color:var(--border-subtle)]/40">
+              <div className="flex items-center justify-between border-b border-[color:var(--border-subtle)] px-6 py-5">
                 <span className="text-base font-semibold">Menu</span>
                 <button
                   type="button"
@@ -73,31 +73,30 @@ const HamMenu = () => {
                 </button>
               </div>
 
-              <nav className="px-6 py-6 text-base leading-7 text-slate-200">
+              <nav className="px-6 py-6 text-base leading-7">
                 <ul className="space-y-4">
-                  {NAV_LINKS.map(({ href, label, badge }) => (
+                  {NAV_LINKS.map(({ href, label }) => (
                     <li key={href}>
                       <Link
-                        className="flex items-center justify-between font-semibold"
+                        className="block font-semibold text-[color:var(--text-base)] hover:text-[color:var(--accent-secondary)]"
                         href={href}
                         onClick={() => setIsOpen(false)}
                       >
-                        <span>{label}</span>
-                        {badge ? (
-                          <span className="ml-3 rounded-full bg-emerald-400/20 px-2 py-0.5 text-xs text-emerald-200">
-                            {badge}
-                          </span>
-                        ) : null}
+                        {label}
                       </Link>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8 space-y-4 border-t border-white/10 pt-6">
-                  <Link className="block font-semibold" href="/login" onClick={() => setIsOpen(false)}>
+                <div className="mt-8 space-y-4 border-t border-[color:var(--border-subtle)] pt-6">
+                  <Link
+                    className="block font-semibold text-[color:var(--text-base)] hover:text-[color:var(--accent-secondary)]"
+                    href="/login"
+                    onClick={() => setIsOpen(false)}
+                  >
                     Sign in
                   </Link>
                   <Link
-                    className="inline-flex w-full justify-center rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:from-emerald-300 hover:via-cyan-300 hover:to-sky-400"
+                    className="inline-flex w-full justify-center rounded-full bg-[color:var(--accent-primary)] px-4 py-2 text-sm font-semibold text-[color:var(--surface-950)] shadow-lg shadow-[rgba(61,214,140,0.25)] hover:bg-[color:var(--accent-secondary)] hover:text-[color:var(--surface-900)]"
                     href="/sell"
                     onClick={() => setIsOpen(false)}
                   >

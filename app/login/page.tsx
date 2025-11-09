@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 
 const LoginPage = () => {
   return (
-    <main className="bg-slate-950 text-white">
+    <main className="bg-[color:var(--surface-950)] text-[color:var(--text-base)]">
       <PageHeader
         title="Sign in"
         description="Access your dashboard to follow repairs, manage shipping preferences, and review invoices."
       />
       <section className="mx-auto max-w-md px-6 pb-24 lg:px-8">
-        <form className="space-y-5 rounded-3xl border border-white/10 bg-white/5 p-8 text-sm text-slate-200 backdrop-blur">
+        <form className="space-y-5 rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/70 p-8 text-sm backdrop-blur">
           <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-semibold text-emerald-200">
+            <label htmlFor="email" className="text-sm font-semibold text-[color:var(--text-strong)]">
               Email
             </label>
             <input
@@ -25,11 +25,11 @@ const LoginPage = () => {
               name="email"
               type="email"
               required
-              className="w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white placeholder:text-slate-500"
+              className="w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
             />
           </div>
           <div className="space-y-2">
-            <label htmlFor="password" className="text-sm font-semibold text-emerald-200">
+            <label htmlFor="password" className="text-sm font-semibold text-[color:var(--text-strong)]">
               Password
             </label>
             <input
@@ -37,18 +37,18 @@ const LoginPage = () => {
               name="password"
               type="password"
               required
-              className="w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white placeholder:text-slate-500"
+              className="w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
             />
           </div>
           <button
             type="submit"
-            className="w-full rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:from-emerald-300 hover:via-cyan-300 hover:to-sky-400"
+            className="w-full rounded-full bg-[color:var(--accent-primary)] px-6 py-3 text-sm font-semibold text-[color:var(--surface-950)] shadow-lg shadow-[rgba(61,214,140,0.25)] hover:bg-[color:var(--accent-secondary)] hover:text-[color:var(--surface-900)]"
           >
             Continue
           </button>
-          <p className="text-center text-xs text-slate-400">
+          <p className="text-center text-xs text-[color:var(--text-muted)]">
             Need an account?{' '}
-            <Link className="font-semibold text-emerald-200 hover:text-emerald-100" href="/account">
+            <Link className="font-semibold text-[color:var(--accent-secondary)] hover:text-[color:var(--accent-secondary)]/80" href="/portal">
               Request access
             </Link>
           </p>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: '%s | GPU Doctor',
   },
   description:
-    'Expert GPU diagnostics, repairs, and performance upgrades delivered with meticulous attention to detail.',
+    'GPU Doctor provides trusted diagnostics, expedited repairs, refurbishment, and curated hardware for graphics professionals.',
 }
 
 export const viewport: Viewport = {
@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-white text-slate-900 font-sans">
+      <body className="min-h-screen bg-transparent text-[color:var(--text-base)] antialiased">
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

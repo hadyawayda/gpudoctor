@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+
 import PageHeader from '@/app/_components/PageHeader'
 
 export const metadata: Metadata = {
@@ -7,16 +8,16 @@ export const metadata: Metadata = {
 
 const ContactPage = () => {
   return (
-    <main className="bg-slate-950 text-white">
+    <main className="bg-[color:var(--surface-950)] text-[color:var(--text-base)]">
       <PageHeader
         title="Contact our technicians"
-        description="Need diagnostic help, enterprise quotes, or marketplace assistance? Reach our labs anytime and Atlas AI will route your request."
+        description="Need diagnostic help, enterprise quotes, or marketplace assistance? Reach our labs and a specialist will respond quickly."
       />
       <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-24 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 xl:px-16">
-        <form className="space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 text-sm text-slate-200 backdrop-blur">
+        <form className="space-y-6 rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/70 p-8 text-sm backdrop-blur">
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="name">
+              <label className="text-sm font-semibold text-[color:var(--text-strong)]" htmlFor="name">
                 Name
               </label>
               <input
@@ -24,11 +25,11 @@ const ContactPage = () => {
                 name="name"
                 type="text"
                 placeholder="Your name"
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white placeholder:text-slate-500"
+                className="mt-2 w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
               />
             </div>
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="email">
+              <label className="text-sm font-semibold text-[color:var(--text-strong)]" htmlFor="email">
                 Email
               </label>
               <input
@@ -36,18 +37,18 @@ const ContactPage = () => {
                 name="email"
                 type="email"
                 placeholder="you@example.com"
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white placeholder:text-slate-500"
+                className="mt-2 w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
               />
             </div>
           </div>
           <div>
-            <label className="text-sm font-semibold text-emerald-200" htmlFor="topic">
+            <label className="text-sm font-semibold text-[color:var(--text-strong)]" htmlFor="topic">
               Topic
             </label>
             <select
               id="topic"
               name="topic"
-              className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+              className="mt-2 w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
             >
               <option>Repair status</option>
               <option>Marketplace listing</option>
@@ -57,7 +58,7 @@ const ContactPage = () => {
             </select>
           </div>
           <div>
-            <label className="text-sm font-semibold text-emerald-200" htmlFor="message">
+            <label className="text-sm font-semibold text-[color:var(--text-strong)]" htmlFor="message">
               Message
             </label>
             <textarea
@@ -65,36 +66,36 @@ const ContactPage = () => {
               name="message"
               rows={5}
               placeholder="Tell us how we can help."
-              className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white placeholder:text-slate-500"
+              className="mt-2 w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
             />
           </div>
           <button
             type="submit"
-            className="w-full rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:from-emerald-300 hover:via-cyan-300 hover:to-sky-400"
+            className="w-full rounded-full bg-[color:var(--accent-primary)] px-6 py-3 text-sm font-semibold text-[color:var(--surface-950)] shadow-lg shadow-[rgba(61,214,140,0.25)] hover:bg-[color:var(--accent-secondary)] hover:text-[color:var(--surface-900)]"
           >
             Send message
           </button>
-          <p className="text-xs text-slate-400">
-            We respond within one business hour. Atlas AI generates a ticket and sends you status alerts automatically.
+          <p className="text-xs text-[color:var(--text-muted)]">
+            We respond within one business hour. You will receive a confirmation ticket in the portal and by email.
           </p>
         </form>
-        <aside className="space-y-6">
-          <div className="rounded-3xl border border-emerald-500/10 bg-emerald-500/10 p-6 text-sm text-emerald-200">
-            <p className="text-lg font-semibold text-white">Direct channels</p>
-            <p className="mt-3 text-xs text-emerald-200/80">WhatsApp +961 76 941 100 • Discord @gpudoctor • support@gpudoctor.com</p>
+        <aside className="space-y-6 text-sm">
+          <div className="rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)]/85 p-6">
+            <p className="text-lg font-semibold text-[color:var(--text-strong)]">Direct channels</p>
+            <p className="mt-3 text-xs text-[color:var(--text-base)]">WhatsApp +961 76 941 100 • Discord @gpudoctor • support@gpudoctor.com</p>
           </div>
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-slate-200">
-            <h2 className="text-lg font-semibold text-emerald-200">Lab hours</h2>
-            <p className="mt-3 text-xs text-slate-300">
+          <div className="rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/70 p-6">
+            <h2 className="text-lg font-semibold text-[color:var(--text-strong)]">Lab hours</h2>
+            <p className="mt-3 text-xs text-[color:var(--text-base)]">
               Monday–Friday 09:00–18:00 EET. Emergency coverage is available for esports events and production outages.
             </p>
           </div>
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-slate-200">
-            <h2 className="text-lg font-semibold text-emerald-200">Global labs</h2>
-            <ul className="mt-3 space-y-2 text-xs text-slate-300">
-              <li>Austin, TX – Liquid cooling and immersion lab</li>
-              <li>Toronto, CA – Enterprise refurb centre</li>
-              <li>Remote hubs – Pop-up diagnostics for esports events</li>
+          <div className="rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/70 p-6">
+            <h2 className="text-lg font-semibold text-[color:var(--text-strong)]">Global labs</h2>
+            <ul className="mt-3 space-y-2 text-xs text-[color:var(--text-base)]">
+              <li>Austin, TX – Liquid cooling and refurbishment lab</li>
+              <li>Toronto, CA – Enterprise service centre</li>
+              <li>Remote hubs – Pop-up diagnostics for events</li>
             </ul>
           </div>
         </aside>

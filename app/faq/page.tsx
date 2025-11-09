@@ -6,27 +6,27 @@ const FAQS: Array<{ question: string; answer: string }> = [
   {
     question: 'How long does a typical repair take?',
     answer:
-      'Most GPU repairs complete within 3–5 business days once you approve the quote. Priority and enterprise SLAs can deliver same-day diagnostics.',
+      'Standard repairs complete within six weeks from approval. Expedited repairs are finished and shipped within seven calendar days.',
   },
   {
     question: 'Do you offer warranty on repairs?',
     answer:
-      'Every repair includes a 24-month warranty covering replaced components and the original issue. Marketplace refurb purchases inherit the same coverage.',
+      'Every repair includes a one-week warranty covering workmanship and parts we replace. You can extend coverage to six weeks before the repair ships.',
   },
   {
     question: 'Can you work on mining GPUs or server accelerators?',
     answer:
-      'Absolutely. We service RTX, Radeon, and data-center accelerators with custom stress profiles for rendering, AI, or compute workloads.',
-  },
-  {
-    question: 'How does Atlas AI help with my repair?',
-    answer:
-      'Atlas parses crash logs, analyses telemetry, and keeps you informed with conversational updates accessible from the dashboard or Discord.',
+      'Yes. We service RTX, Radeon, and data-center accelerators with stress profiles tailored for rendering, compute, and broadcast workloads.',
   },
   {
     question: 'Can I bundle upgrades with my repair?',
     answer:
-      'Yes. Add thermal rebuilds, firmware tuning, or refurbish packages directly during approval. Your technician will confirm compatibility.',
+      'Absolutely. Add thermal pad and paste overhauls, preventative maintenance, or certification packages directly when approving your quote.',
+  },
+  {
+    question: 'How do I track my repair?',
+    answer:
+      'portal.gpudoctor.com displays milestones, technician notes, and shipping updates. You can also opt in to email or SMS notifications.',
   },
 ]
 
@@ -36,17 +36,17 @@ export const metadata: Metadata = {
 
 const FAQPage = () => {
   return (
-    <main className="bg-slate-950 text-white">
+    <main className="bg-[color:var(--surface-950)] text-[color:var(--text-base)]">
       <PageHeader
         title="Frequently asked questions"
-        description="Find answers about diagnostics, warranties, logistics, and Atlas AI support."
+        description="Find answers about diagnostics, warranties, logistics, and account management."
       />
       <section className="mx-auto max-w-5xl px-6 pb-24 lg:px-10 xl:px-16">
-        <dl className="space-y-8 text-sm leading-7 text-slate-200">
+        <dl className="space-y-8 text-sm leading-7">
           {FAQS.map(({ question, answer }) => (
-            <div key={question} className="rounded-3xl border border-white/10 bg-white/5 p-6">
-              <dt className="text-lg font-semibold text-white">{question}</dt>
-              <dd className="mt-3 text-sm text-slate-200">{answer}</dd>
+            <div key={question} className="rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/70 p-6">
+              <dt className="text-lg font-semibold text-[color:var(--text-strong)]">{question}</dt>
+              <dd className="mt-3 text-sm text-[color:var(--text-base)]">{answer}</dd>
             </div>
           ))}
         </dl>

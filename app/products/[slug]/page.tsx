@@ -22,7 +22,7 @@ export function generateMetadata({ params }: ProductPageProps): Metadata {
   }
 
   return {
-    title: `${product.name} – GPU Doctor catalogue`,
+    title: `${product.name} – GPU Doctor store`,
     description: product.description,
   }
 }
@@ -35,21 +35,21 @@ const ProductDetailPage = ({ params }: ProductPageProps) => {
   }
 
   return (
-    <main className="bg-slate-950 text-white">
+    <main className="bg-[color:var(--surface-950)] text-[color:var(--text-base)]">
       <PageHeader
         title={product.name}
-        description={`${product.description} Explore compatible services, marketplace listings, and upgrade options below.`}
+        description={`${product.description} Review compatible services, refurbishment options, and warranty upgrades below.`}
         actions={
           <div className="flex flex-wrap gap-3">
             <Link
               href="/marketplace"
-              className="inline-flex items-center rounded-full border border-emerald-400/60 px-5 py-3 text-sm font-semibold text-emerald-200 hover:border-emerald-300 hover:text-emerald-100"
+              className="inline-flex items-center rounded-full border border-[color:var(--accent-secondary)]/60 px-5 py-3 text-sm font-semibold text-[color:var(--accent-secondary)] hover:border-[color:var(--accent-secondary)]"
             >
               Check marketplace availability
             </Link>
             <Link
               href={`/repair-requests?product=${product.slug}`}
-              className="inline-flex items-center rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:from-emerald-300 hover:via-cyan-300 hover:to-sky-400"
+              className="inline-flex items-center rounded-full bg-[color:var(--accent-primary)] px-5 py-3 text-sm font-semibold text-[color:var(--surface-950)] shadow-lg shadow-[rgba(61,214,140,0.25)] hover:bg-[color:var(--accent-secondary)] hover:text-[color:var(--surface-900)]"
             >
               Schedule a service
             </Link>
@@ -57,75 +57,77 @@ const ProductDetailPage = ({ params }: ProductPageProps) => {
         }
       />
       <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-24 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 xl:px-16">
-        <div className="space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-          <div className="relative h-72 overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
+        <div className="space-y-6 rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/75 p-8 backdrop-blur">
+          <div className="relative h-72 overflow-hidden rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)]">
             <Image src={product.images[0]} alt={product.name} width={960} height={640} className="h-full w-full object-cover" />
           </div>
-          <div className="flex flex-wrap gap-3 text-xs text-emerald-200/80">
-            <span className="rounded-full bg-white/10 px-3 py-1 text-slate-200">{product.brand}</span>
-            <span className="rounded-full bg-emerald-400/20 px-3 py-1 text-emerald-200">{product.condition}</span>
-            <span className="rounded-full bg-cyan-400/20 px-3 py-1 text-cyan-100">{product.availability}</span>
+          <div className="flex flex-wrap gap-3 text-xs text-[color:var(--text-muted)]">
+            <span className="rounded-full bg-[color:var(--surface-950)] px-3 py-1 text-[color:var(--text-base)]">{product.brand}</span>
+            <span className="rounded-full bg-[color:var(--accent-secondary)]/10 px-3 py-1 text-[color:var(--accent-secondary)]">{product.condition}</span>
+            <span className="rounded-full bg-[color:var(--accent-primary)]/20 px-3 py-1 text-[color:var(--accent-secondary)]">{product.availability}</span>
           </div>
-          <p className="text-sm leading-7 text-slate-200">{product.description}</p>
+          <p className="text-sm leading-7 text-[color:var(--text-base)]">{product.description}</p>
           <div>
-            <h2 className="text-lg font-semibold text-emerald-200">Key specifications</h2>
-            <dl className="mt-4 grid gap-4 text-sm text-slate-200 sm:grid-cols-2">
+            <h2 className="text-lg font-semibold text-[color:var(--text-strong)]">Key specifications</h2>
+            <dl className="mt-4 grid gap-4 text-sm text-[color:var(--text-base)] sm:grid-cols-2">
               {product.specs.map((spec) => (
-                <div key={spec.label} className="rounded-2xl border border-white/10 bg-slate-950/60 p-4">
-                  <dt className="text-xs font-semibold uppercase tracking-wide text-emerald-300">{spec.label}</dt>
-                  <dd className="mt-2 text-sm text-white">{spec.value}</dd>
+                <div key={spec.label} className="rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)]/80 p-4">
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-[color:var(--text-muted)]">{spec.label}</dt>
+                  <dd className="mt-2 text-sm text-[color:var(--text-strong)]">{spec.value}</dd>
                 </div>
               ))}
             </dl>
           </div>
         </div>
         <aside className="space-y-6">
-          <div className="rounded-3xl border border-emerald-500/10 bg-slate-900/70 p-6">
-            <h2 className="text-lg font-semibold text-emerald-200">Purchase options</h2>
-            <p className="mt-3 text-3xl font-semibold text-emerald-300">${product.price.toLocaleString()}</p>
-            <p className="mt-2 text-xs text-slate-300">
-              Includes GPU Doctor telemetry pack, atlas AI setup, and 24-month coverage on refurbished hardware.
+          <div className="rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)]/85 p-6">
+            <h2 className="text-lg font-semibold text-[color:var(--text-strong)]">Purchase options</h2>
+            <p className="mt-3 text-3xl font-semibold text-[color:var(--accent-secondary)]">${product.price.toLocaleString()}</p>
+            <p className="mt-2 text-xs text-[color:var(--text-muted)]">
+              Includes GPU Doctor documentation pack, eligibility for refurbishment add-on, and one-week warranty with optional six-week extension.
             </p>
-            <div className="mt-5 grid gap-3 text-xs">
-              <span className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-200">
+            <div className="mt-5 grid gap-3 text-xs text-[color:var(--text-base)]">
+              <span className="rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/70 px-4 py-3">
                 Add to builder to check case clearance and PSU headroom.
               </span>
-              <span className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-200">
-                Bundle with <strong>Graphene thermal rebuild</strong> for instant performance uplift.
+              <span className="rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/70 px-4 py-3">
+                Bundle with <strong>Thermal pad &amp; paste overhaul</strong> for improved cooling.
               </span>
             </div>
             <div className="mt-5 flex flex-wrap gap-3">
               <Link
                 href="/builds"
-                className="rounded-full border border-emerald-400/60 px-5 py-3 text-xs font-semibold text-emerald-200 hover:border-emerald-300 hover:text-emerald-100"
+                className="rounded-full border border-[color:var(--accent-secondary)]/60 px-5 py-3 text-xs font-semibold text-[color:var(--accent-secondary)] hover:border-[color:var(--accent-secondary)]"
               >
                 Add to PC builder
               </Link>
               <Link
                 href="/cart"
-                className="rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-500 px-5 py-3 text-xs font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:from-emerald-300 hover:via-cyan-300 hover:to-sky-400"
+                className="rounded-full bg-[color:var(--accent-primary)] px-5 py-3 text-xs font-semibold text-[color:var(--surface-950)] shadow-lg shadow-[rgba(61,214,140,0.25)] hover:bg-[color:var(--accent-secondary)] hover:text-[color:var(--surface-900)]"
               >
                 Reserve now
               </Link>
             </div>
           </div>
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-slate-200">
-            <h2 className="text-lg font-semibold text-emerald-200">Service recommendations</h2>
+          <div className="rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/75 p-6 text-sm">
+            <h2 className="text-lg font-semibold text-[color:var(--text-strong)]">Recommended services</h2>
             <ul className="mt-4 space-y-4">
-              <li className="rounded-2xl border border-emerald-500/10 bg-emerald-500/5 p-4">
-                <p className="text-sm font-semibold text-white">Thermal optimisation</p>
-                <p className="mt-1 text-xs text-slate-300">
-                  Pair with graphene thermal rebuild for peak cooling performance.
+              <li className="rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)]/85 p-4">
+                <p className="text-sm font-semibold text-[color:var(--text-strong)]">Thermal optimisation</p>
+                <p className="mt-1 text-xs text-[color:var(--text-base)]">
+                  Pair with the thermal pad &amp; paste overhaul to refresh all interface materials.
                 </p>
               </li>
-              <li className="rounded-2xl border border-emerald-500/10 bg-emerald-500/5 p-4">
-                <p className="text-sm font-semibold text-white">Firmware calibration</p>
-                <p className="mt-1 text-xs text-slate-300">Atlas AI tunes boost tables and validates stability for your workload.</p>
+              <li className="rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)]/85 p-4">
+                <p className="text-sm font-semibold text-[color:var(--text-strong)]">Certification & warranty</p>
+                <p className="mt-1 text-xs text-[color:var(--text-base)]">
+                  Add the GPU Doctor Certified inspection to prep for resale or redeployment with extended coverage.
+                </p>
               </li>
             </ul>
             <Link
               href="/services"
-              className="mt-6 inline-flex items-center text-xs font-semibold text-emerald-200 hover:text-emerald-100"
+              className="mt-6 inline-flex items-center text-xs font-semibold text-[color:var(--accent-secondary)] hover:text-[color:var(--accent-secondary)]/80"
             >
               Explore all services →
             </Link>

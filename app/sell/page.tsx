@@ -68,29 +68,29 @@ const SellPage = () => {
   }
 
   return (
-    <main className="bg-slate-950 text-white">
+    <main className="bg-[color:var(--surface-950)] text-[color:var(--text-base)]">
       <section className="mx-auto max-w-5xl px-6 pb-24 pt-28 lg:px-10 xl:px-16">
         <header className="space-y-6 text-balance">
-          <h1 className="text-4xl font-semibold tracking-tight text-emerald-300 sm:text-5xl">Sell or consign your GPU</h1>
-          <p className="text-lg text-slate-200">
-            Tell us about your graphics card and choose whether you want a refurbish package. We&apos;ll generate an instant trade-in
-            estimate, schedule a pickup, and list it on the GPU Doctor marketplace once it passes validation.
+          <h1 className="text-4xl font-semibold tracking-tight text-[color:var(--text-strong)] sm:text-5xl">Sell your GPU</h1>
+          <p className="text-lg text-[color:var(--text-muted)]">
+            Provide details about your graphics card, select optional refurbishment, and receive an estimated trade-in value.
+            We manage insured shipping, testing, and listing on the GPU Doctor marketplace once the card passes certification.
           </p>
         </header>
 
         <form
           onSubmit={handleSubmit}
-          className="mt-12 grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur lg:grid-cols-[1.05fr_0.95fr]"
+          className="mt-12 grid gap-8 rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/75 p-8 backdrop-blur lg:grid-cols-[1.05fr_0.95fr]"
         >
           <div className="space-y-6">
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="brand">
+              <label className="text-sm font-semibold text-[color:var(--text-strong)]" htmlFor="brand">
                 GPU brand
               </label>
               <select
                 id="brand"
                 name="brand"
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                className="mt-2 w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
                 value={formState.brand}
                 onChange={handleChange}
               >
@@ -102,13 +102,13 @@ const SellPage = () => {
               </select>
             </div>
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="model">
+              <label className="text-sm font-semibold text-[color:var(--text-strong)]" htmlFor="model">
                 Model
               </label>
               <select
                 id="model"
                 name="model"
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                className="mt-2 w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
                 value={formState.model}
                 onChange={handleChange}
               >
@@ -121,13 +121,13 @@ const SellPage = () => {
             </div>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="text-sm font-semibold text-emerald-200" htmlFor="condition">
+                <label className="text-sm font-semibold text-[color:var(--text-strong)]" htmlFor="condition">
                   Condition
                 </label>
                 <select
                   id="condition"
                   name="condition"
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                  className="mt-2 w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
                   value={formState.condition}
                   onChange={handleChange}
                 >
@@ -139,13 +139,13 @@ const SellPage = () => {
                 </select>
               </div>
               <div>
-                <label className="text-sm font-semibold text-emerald-200" htmlFor="issue">
+                <label className="text-sm font-semibold text-[color:var(--text-strong)]" htmlFor="issue">
                   Issue type
                 </label>
                 <select
                   id="issue"
                   name="issue"
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                  className="mt-2 w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
                   value={formState.issue}
                   onChange={handleChange}
                 >
@@ -159,13 +159,13 @@ const SellPage = () => {
             </div>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="text-sm font-semibold text-emerald-200" htmlFor="hours">
+                <label className="text-sm font-semibold text-[color:var(--text-strong)]" htmlFor="hours">
                   Approximate usage hours
                 </label>
                 <select
                   id="hours"
                   name="hours"
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                  className="mt-2 w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
                   value={formState.hours}
                   onChange={handleChange}
                 >
@@ -177,13 +177,13 @@ const SellPage = () => {
                 </select>
               </div>
               <div>
-                <label className="text-sm font-semibold text-emerald-200" htmlFor="accessories">
+                <label className="text-sm font-semibold text-[color:var(--text-strong)]" htmlFor="accessories">
                   Accessories
                 </label>
                 <select
                   id="accessories"
                   name="accessories"
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                  className="mt-2 w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
                   value={formState.accessories}
                   onChange={handleChange}
                 >
@@ -194,61 +194,71 @@ const SellPage = () => {
               </div>
             </div>
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="refurbish">
+              <label className="text-sm font-semibold text-[color:var(--text-strong)]" htmlFor="refurbish">
                 Refurbish before listing?
               </label>
               <select
                 id="refurbish"
                 name="refurbish"
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white"
+                className="mt-2 w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
                 value={formState.refurbish}
                 onChange={handleChange}
               >
-                <option value="yes">Yes – add GPU Doctor refurbish package</option>
-                <option value="no">No – list as-is</option>
+                <option value="yes">Yes, add refurbishment</option>
+                <option value="no">No, list as-is</option>
               </select>
             </div>
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="notes">
-                Additional details
+              <label className="text-sm font-semibold text-[color:var(--text-strong)]" htmlFor="notes">
+                Additional notes
               </label>
               <textarea
                 id="notes"
                 name="notes"
                 rows={4}
-                placeholder="List any modifications, cooling swaps, or previous repairs."
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white placeholder:text-slate-500"
+                placeholder="Tell us about repairs, overclocks, or cosmetic issues."
+                className="mt-2 w-full rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)] px-4 py-3 text-sm"
                 value={formState.notes}
                 onChange={handleChange}
               />
             </div>
-            <button
-              type="submit"
-              className="w-full rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:from-emerald-300 hover:via-cyan-300 hover:to-sky-400"
-            >
-              Get my trade-in estimate
-            </button>
           </div>
-          <aside className="flex flex-col justify-between rounded-3xl border border-emerald-500/10 bg-slate-950/60 p-6 text-sm text-slate-200">
+
+          <aside className="space-y-6 rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)]/85 p-6 text-sm">
             <div>
-              <h2 className="text-lg font-semibold text-emerald-200">Estimated payout</h2>
-              <p className="mt-3 text-3xl font-semibold text-white">${estimatedValue}</p>
-              <p className="mt-2 text-xs text-slate-300">
-                Final payout confirmed after diagnostics. Refurbish packages can increase value up to 15%.
+              <p className="text-xs font-semibold uppercase tracking-wide text-[color:var(--text-muted)]">Estimated value</p>
+              <p className="mt-3 text-3xl font-semibold text-[color:var(--accent-secondary)]">${estimatedValue}</p>
+              <p className="mt-2 text-xs text-[color:var(--text-muted)]">
+                Final payout is confirmed after diagnostics and refurbishment (if selected).
               </p>
             </div>
-            <div className="space-y-4">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-xs text-slate-200">
-                <p>• Free insured pickup within 24 hours in supported cities.</p>
-                <p className="mt-2">• Instant marketplace listing once refurbished or validated.</p>
-                <p className="mt-2">• Track status and offers directly from your GPU Doctor dashboard.</p>
-              </div>
-              {submitted ? (
-                <div className="rounded-2xl border border-emerald-400/30 bg-emerald-400/10 p-4 text-xs text-emerald-200">
-                  Thank you! A specialist will confirm shipping details via email shortly.
-                </div>
-              ) : null}
+            <div className="rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/70 p-5">
+              <h2 className="text-base font-semibold text-[color:var(--text-strong)]">What happens next?</h2>
+              <ul className="mt-3 space-y-3 text-xs text-[color:var(--text-base)]">
+                <li>• We send prepaid, insured shipping labels.</li>
+                <li>• Diagnostics verify condition within 48 hours of arrival.</li>
+                <li>• Choose immediate payout or marketplace consignment.</li>
+              </ul>
             </div>
+            <div className="rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/70 p-5">
+              <h2 className="text-base font-semibold text-[color:var(--text-strong)]">Marketplace benefits</h2>
+              <ul className="mt-3 space-y-3 text-xs text-[color:var(--text-base)]">
+                <li>• GPU Doctor Certified badge boosts buyer confidence.</li>
+                <li>• Refurbish add-on includes pads, paste, and fan service.</li>
+                <li>• Warranty options available for buyers at checkout.</li>
+              </ul>
+            </div>
+            <button
+              type="submit"
+              className="w-full rounded-full bg-[color:var(--accent-primary)] px-5 py-3 text-sm font-semibold text-[color:var(--surface-950)] shadow-lg shadow-[rgba(61,214,140,0.25)] transition hover:bg-[color:var(--accent-secondary)] hover:text-[color:var(--surface-900)]"
+            >
+              Request trade-in offer
+            </button>
+            {submitted ? (
+              <p className="text-xs text-[color:var(--accent-secondary)]">
+                Thank you! A technician will review your submission and reach out within one business hour.
+              </p>
+            ) : null}
           </aside>
         </form>
       </section>

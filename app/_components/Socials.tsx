@@ -39,7 +39,7 @@ const SOCIAL_LINKS: SocialLink[] = [
 
 const SocialLinks = () => {
   return (
-    <div className="flex justify-between items-center w-3/4 md:w-full md:gap-7 pb-20 md:pb-0 animate">
+    <div className="socials animate">
       {SOCIAL_LINKS.map(({ href, icon, label }) => (
         <Link
           key={href}

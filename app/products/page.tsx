@@ -8,21 +8,21 @@ import { productCategories, getProductsByCategories } from '../_data/site'
 
 export const metadata: Metadata = {
   title: 'Products',
-  description: 'Browse GPUs, CPUs, cooling, and chassis curated by GPU Doctor engineers with telemetry-backed validation.',
+  description: 'Browse GPUs, CPUs, cooling, and chassis curated by GPU Doctor technicians with detailed validation.',
 }
 
 const ProductsPage = () => {
   return (
-    <main className="bg-slate-950 text-white">
+    <main className="bg-[color:var(--surface-950)] text-[color:var(--text-base)]">
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.2),_transparent_65%)]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(61,214,140,0.18),_transparent_70%)]" />
         <PageHeader
           title="Curated hardware catalogue"
-          description="Every component in our store is stress-tested, firmware-optimised, and ready for your next GPU build or repair upgrade."
+          description="Every component in our store is stress-tested, documented, and ready for your next GPU build or repair upgrade."
           actions={
             <Link
               href="/store"
-              className="inline-flex items-center rounded-full border border-emerald-400/60 px-5 py-3 text-sm font-semibold text-emerald-200 hover:border-emerald-300 hover:text-emerald-100"
+              className="inline-flex items-center rounded-full border border-[color:var(--accent-secondary)]/60 px-5 py-3 text-sm font-semibold text-[color:var(--accent-secondary)] hover:border-[color:var(--accent-secondary)]"
             >
               Visit the live store feed
             </Link>
@@ -35,22 +35,22 @@ const ProductsPage = () => {
           {productCategories.map(({ title, subtitle, categories, highlight }) => {
             const products = getProductsByCategories(categories)
             return (
-              <section key={title} className="space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+              <section key={title} className="space-y-6 rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/70 p-8 backdrop-blur">
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                   <div>
-                    <h2 className="text-2xl font-semibold text-emerald-300">{title}</h2>
-                    <p className="mt-2 text-sm text-slate-200">{subtitle}</p>
+                    <h2 className="text-2xl font-semibold text-[color:var(--text-strong)]">{title}</h2>
+                    <p className="mt-2 text-sm text-[color:var(--text-base)]">{subtitle}</p>
                   </div>
-                  <p className="text-xs text-emerald-200/80">{highlight}</p>
+                  <p className="text-xs text-[color:var(--text-muted)]">{highlight}</p>
                 </div>
                 <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                   {products.map((product) => (
                     <Link
                       key={product.slug}
                       href={`/products/${product.slug}`}
-                      className="group rounded-2xl border border-white/10 bg-slate-950/60 p-5 transition hover:border-emerald-400/40"
+                      className="group rounded-2xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)]/85 p-5 transition hover:border-[color:var(--accent-secondary)]/60"
                     >
-                      <div className="relative mb-4 h-44 overflow-hidden rounded-xl border border-white/10 bg-slate-900">
+                      <div className="relative mb-4 h-44 overflow-hidden rounded-xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-900)]/80">
                         <Image
                           src={product.images[0]}
                           alt={product.name}
@@ -60,14 +60,14 @@ const ProductsPage = () => {
                         />
                       </div>
                       <div className="space-y-2 text-sm">
-                        <div className="flex items-center justify-between text-xs text-emerald-200/80">
+                        <div className="flex items-center justify-between text-xs text-[color:var(--text-muted)]">
                           <span>{product.brand}</span>
                           <span>{product.condition}</span>
                         </div>
-                        <h3 className="text-base font-semibold text-white">{product.name}</h3>
-                        <p className="text-xs text-slate-300">{product.model}</p>
-                        <p className="text-xs text-slate-400">{product.tags.join(' • ')}</p>
-                        <p className="text-base font-semibold text-emerald-300">${product.price}</p>
+                        <h3 className="text-base font-semibold text-[color:var(--text-strong)]">{product.name}</h3>
+                        <p className="text-xs text-[color:var(--text-base)]">{product.model}</p>
+                        <p className="text-xs text-[color:var(--text-muted)]">{product.tags.join(' • ')}</p>
+                        <p className="text-base font-semibold text-[color:var(--accent-secondary)]">${product.price}</p>
                       </div>
                     </Link>
                   ))}
@@ -78,23 +78,23 @@ const ProductsPage = () => {
         </div>
       </section>
 
-      <section className="bg-slate-950 pb-24">
-        <div className="mx-auto max-w-4xl rounded-3xl border border-emerald-500/10 bg-emerald-500/10 p-8 text-center text-slate-900">
-          <h2 className="text-3xl font-semibold">Need something bespoke?</h2>
-          <p className="mt-4 text-sm text-slate-900/80">
-            Our engineers can source rare GPUs, pre-flash firmware for cluster deployments, or assemble prebuilt rigs. Share your
-            wishlist and we&apos;ll design a parts list with Atlas AI recommendations.
+      <section className="bg-[color:var(--surface-900)]/70 pb-24">
+        <div className="mx-auto max-w-4xl rounded-3xl border border-[color:var(--border-subtle)] bg-[color:var(--surface-950)]/85 p-8 text-center">
+          <h2 className="text-3xl font-semibold text-[color:var(--text-strong)]">Need something bespoke?</h2>
+          <p className="mt-4 text-sm text-[color:var(--text-base)]">
+            Our technicians can source rare GPUs, pre-stage refurbishment, or assemble prebuilt rigs. Share your wishlist and we
+            will design a parts list with maintenance and warranty recommendations.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Link
               href="/repair-requests"
-              className="rounded-full border border-emerald-400/70 px-5 py-3 text-sm font-semibold text-emerald-200 hover:border-emerald-300 hover:text-emerald-100"
+              className="rounded-full border border-[color:var(--accent-secondary)]/60 px-5 py-3 text-sm font-semibold text-[color:var(--accent-secondary)] hover:border-[color:var(--accent-secondary)]"
             >
               Request a sourcing quote
             </Link>
             <Link
               href="/builds"
-              className="rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:from-emerald-300 hover:via-cyan-300 hover:to-sky-400"
+              className="rounded-full bg-[color:var(--accent-primary)] px-5 py-3 text-sm font-semibold text-[color:var(--surface-950)] shadow-lg shadow-[rgba(61,214,140,0.25)] hover:bg-[color:var(--accent-secondary)] hover:text-[color:var(--surface-900)]"
             >
               Start a build
             </Link>
