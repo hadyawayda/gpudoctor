@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const StorePage = () => {
   return (
-    <main className="bg-[#07130e] text-emerald-50">
+    <main className="bg-background-base text-slate-100">
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(60,227,123,0.22),_transparent_70%)]" />
         <PageHeader
@@ -23,7 +23,7 @@ const StorePage = () => {
           actions={
             <Link
               href="/marketplace"
-              className="inline-flex items-center rounded-full border border-emerald-400/60 px-5 py-3 text-sm font-semibold text-emerald-100 hover:border-emerald-300 hover:text-emerald-50"
+              className="inline-flex items-center rounded-full border border-primary-500/60 px-5 py-3 text-sm font-semibold text-primary-200 hover:border-primary-400 hover:text-slate-100"
             >
               Browse marketplace listings
             </Link>
