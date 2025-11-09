@@ -1,117 +1,94 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-import { createClient } from '@supabase/supabase-js'
-import Navbar from '../../app/_components/Navbar'
-import Footer from '../../app/_components/Footer'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
 
-type Product = {
-  id: number
-  name: string
-  price: number
-  imageUrl: string
-  description: string
-}
+import { catalogProducts } from '../_data/site'
 
-function cn(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
-
-export default function Products() {
-  const [products, setProducts] = useState<Product[] | null>(null)
-  const [error, setError] = useState('')
-  const [loading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const supabaseAdmin = createClient(
-          process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-          process.env.NEXT_PUBLIC_SUPABASE_KEY || ''
-        )
-        const { data } = await supabaseAdmin
-          .from('Products')
-          .select('*')
-          .order('id')
-        console.log('hi')
-        setError('')
-        setProducts(data)
-      } catch (err: Error | unknown) {
-        console.error(err)
-        console.log((err as Error).stack)
-        setError((err as Error).toString())
-      } finally {
-        setIsLoading(false)
-      }
-    }
-
-    ;(async () => await getData())()
-  }, [])
+const StorePage = () => {
+  const featuredProducts = catalogProducts.filter((product) => product.availability === 'In Stock').slice(0, 6)
 
   return (
-    <div>
-      {loading ? (
-        <div className="justify-center items-center flex h-full my-80">
-          Loading...
-        </div>
-      ) : (
-        <main>
-          <Navbar />
-          <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-            <h1 className="mb-8">Products List:</h1>
-            <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-              {products?.map((product: Product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
+    <main className="bg-slate-950 text-white">
+      <section className="mx-auto max-w-6xl px-6 pb-24 pt-28 lg:px-10 xl:px-16">
+        <header className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-3xl space-y-4">
+            <h1 className="text-4xl font-semibold tracking-tight text-emerald-300 sm:text-5xl">Live store feed</h1>
+            <p className="text-lg text-slate-200">
+              Real-time availability for GPU Doctor curated hardware. Each item ships with telemetry reports, Atlas AI setup, and
+              optional refurbish or installation packages.
+            </p>
           </div>
+          <Link
+            href="/marketplace"
+            className="inline-flex items-center rounded-full border border-emerald-400/60 px-5 py-3 text-sm font-semibold text-emerald-200 hover:border-emerald-300 hover:text-emerald-100"
+          >
+            Browse community listings
+          </Link>
+        </header>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {featuredProducts.map((product) => (
+            <article key={product.slug} className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+              <div className="relative mb-4 h-48 overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
+                <Image
+                  src={product.images[0]}
+                  alt={product.name}
+                  width={600}
+                  height={400}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="flex items-center justify-between text-xs text-emerald-200/80">
+                <span>{product.brand}</span>
+                <span>{product.condition}</span>
+              </div>
+              <h2 className="mt-3 text-lg font-semibold text-white">{product.name}</h2>
+              <p className="mt-1 text-sm text-slate-300">{product.model}</p>
+              <p className="mt-3 text-xs text-slate-400">{product.tags.join(' • ')}</p>
+              <div className="mt-4 flex items-center justify-between">
+                <span className="text-lg font-semibold text-emerald-300">${product.price}</span>
+                <Link
+                  href={`/products/${product.slug}`}
+                  className="text-xs font-semibold text-emerald-200 hover:text-emerald-100"
+                >
+                  View details →
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-16 grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            {error && (
-              <p className="justify-center items-center flex text-red-500">
-                {error}
-              </p>
-            )}
+            <h2 className="text-2xl font-semibold text-emerald-300">Need enterprise SLAs?</h2>
+            <p className="mt-3 text-sm text-slate-200">
+              We stock redundant GPUs, rackmount-ready kits, and overnight swap programs for render farms and inference clusters.
+              Contact our enterprise team to secure dedicated inventory.
+            </p>
+            <Link
+              href="/services"
+              className="mt-6 inline-flex items-center text-xs font-semibold text-emerald-200 hover:text-emerald-100"
+            >
+              Explore enterprise services →
+            </Link>
           </div>
-          <Footer />
-        </main>
-      )}
-    </div>
-  )
-}
-
-function ProductCard({ product }: { product: Product }) {
-  const [isLoading, setLoading] = useState(true)
-
-  return (
-    <Link href={`/products/${product.id}`} className="group">
-      <div className="aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8 w-full overflow-hidden rounded-lg bg-gray-400">
-        <Image
-          alt=""
-          src={product.imageUrl}
-          fill={true}
-          className={cn(
-            'group-hover:opacity-75 duration-700 ease-in-out object-cover',
-            isLoading
-              ? 'grayscale blur-2xl scale-110'
-              : 'grayscale-0 blur-0 scale-100'
-          )}
-          onLoadingComplete={() => setLoading(false)}
-        />
-      </div>
-      <div className="mt-4 flex flex-col grow overflow-hidden justify-between">
-        <div className="flex justify-between mb-2">
-          <h3 className="text-lg font-medium text-gray-700">{product.name}</h3>
-          <p className="mt-0.5 pt-px whitespace-nowrap text-gray-700 font-semibold">
-            ${product.price}
-          </p>
+          <div className="rounded-2xl border border-emerald-500/10 bg-emerald-500/10 p-6 text-sm text-emerald-200">
+            <p className="font-semibold text-white">Same-day installation</p>
+            <p className="mt-2 text-xs text-emerald-200/80">
+              Book a technician to integrate your purchase into an existing workstation, rack, or immersion loop.
+            </p>
+            <p className="mt-5 font-semibold text-white">Telemetry-ready shipping</p>
+            <p className="mt-2 text-xs text-emerald-200/80">
+              Every shipment includes QR codes linking to benchmarks, thermal profiles, and post-repair notes.
+            </p>
+            <p className="mt-5 font-semibold text-white">Atlas AI monitoring</p>
+            <p className="mt-2 text-xs text-emerald-200/80">
+              Enable proactive alerts for temperature spikes, fan degradation, or driver regressions.
+            </p>
+          </div>
         </div>
-        <p className="mt-1 leading-5 text-sm break-words font-light h-full max-h-[4rem] text-gray-500">
-          {product.description}
-          gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-        </p>
-      </div>
-    </Link>
+      </section>
+    </main>
   )
 }
+
+export default StorePage

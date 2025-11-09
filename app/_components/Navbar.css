@@ -10,7 +10,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  z-index: 1;
+  z-index: 10;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
 }
 
 .navbar {
@@ -51,7 +54,7 @@
   position: relative;
   width: 24px;
   height: 24px;
-  fill: #111827;
+  fill: #e2e8f0;
 }
 
 .hamburger-menu {
@@ -91,12 +94,12 @@
   font-weight: 600;
   font-size: 15px;
   line-height: 24px;
-  color: #111827;
+  color: #e2e8f0;
 }
 
 .menu-links > div {
-  background-color: rgb(14, 165, 233);
-  color: white;
+  background-color: rgba(16, 185, 129, 0.9);
+  color: #020617;
   font-size: 12px;
   line-height: 16px;
 }
