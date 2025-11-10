@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
-import Footer from './_components/Footer'
-import Navbar from './_components/Navbar'
+import Footer from './shared/Footer'
+import Navbar from './shared/Navbar'
 
 export const metadata: Metadata = {
   title: {
@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   },
   description:
     'Expert GPU diagnostics, repairs, and performance upgrades delivered with meticulous attention to detail.',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 }
 
 export const viewport: Viewport = {
@@ -21,7 +26,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-[#06140e] text-emerald-50 font-sans">
+      <body className="bg-background-base text-slate-100 font-sans">
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

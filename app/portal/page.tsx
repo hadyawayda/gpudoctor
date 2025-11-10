@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-import PageHeader from '@/app/_components/PageHeader'
+import PageHeader from '@/app/shared/PageHeader'
 
 export const metadata: Metadata = {
   title: 'Customer Portal',
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const PortalPage = () => {
   return (
-    <main className="bg-[#07130e] text-emerald-50">
+    <main className="bg-background-base text-slate-100">
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(60,227,123,0.2),_transparent_70%)]" />
         <PageHeader
@@ -20,25 +20,25 @@ const PortalPage = () => {
 
       <section className="mx-auto max-w-6xl px-6 pb-24 lg:px-10 xl:px-16">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <article className="space-y-6 rounded-3xl border border-emerald-500/20 bg-[#0b1f17]/70 p-8">
-            <h2 className="text-xl font-semibold text-emerald-200">Dashboard overview</h2>
-            <p className="text-sm text-emerald-50/80">
+          <article className="space-y-6 rounded-3xl border border-primary-500/20 bg-background-section/70 p-8">
+            <h2 className="text-xl font-semibold text-primary-300">Dashboard overview</h2>
+            <p className="text-sm text-slate-300">
               The portal brings all of your data together. Review intake forms, approvals, invoices, and shipping details in a single
               feed. Every event is timestamped and exportable so you always have proof of service.
             </p>
-            <ul className="space-y-3 text-sm text-emerald-50/75">
+            <ul className="space-y-3 text-sm text-slate-100/75">
               <li>• Quick view widgets for active repairs, upcoming maintenance, and outstanding invoices.</li>
               <li>• Timeline history showing diagnostics, approvals, payments, and courier scans.</li>
               <li>• Downloadable PDF packets containing work summaries and certification badges.</li>
             </ul>
           </article>
-          <aside className="space-y-6 rounded-3xl border border-emerald-500/20 bg-[#0b1f17]/70 p-8 text-sm text-emerald-50/80">
-            <h2 className="text-xl font-semibold text-emerald-200">Security</h2>
+          <aside className="space-y-6 rounded-3xl border border-primary-500/20 bg-background-section/70 p-8 text-sm text-slate-300">
+            <h2 className="text-xl font-semibold text-primary-300">Security</h2>
             <p>
               Enable two-factor authentication, session alerts, and hardware ownership verification. Add trusted contacts who can approve
               quotes or access documents without sharing your password.
             </p>
-            <Link className="inline-flex items-center text-xs font-semibold text-emerald-100 hover:text-emerald-50" href="/support">
+            <Link className="inline-flex items-center text-xs font-semibold text-primary-200 hover:text-slate-100" href="/support">
               Review account policies →
             </Link>
           </aside>
@@ -77,9 +77,9 @@ const PortalPage = () => {
                 'Choose how you receive updates—email, SMS, or webhook—and assign teammates to approve work on your behalf.',
             },
           ].map(({ title, description }) => (
-            <div key={title} className="rounded-3xl border border-emerald-500/20 bg-[#0b1f17]/70 p-6">
-              <h3 className="text-lg font-semibold text-emerald-200">{title}</h3>
-              <p className="mt-3 text-sm text-emerald-50/80">{description}</p>
+            <div key={title} className="rounded-3xl border border-primary-500/20 bg-background-section/70 p-6">
+              <h3 className="text-lg font-semibold text-primary-300">{title}</h3>
+              <p className="mt-3 text-sm text-slate-300">{description}</p>
             </div>
           ))}
         </div>

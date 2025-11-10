@@ -68,11 +68,11 @@ const SellPage = () => {
   }
 
   return (
-    <main className="bg-[#07130e] text-emerald-50">
+    <main className="bg-background-base text-slate-100">
       <section className="mx-auto max-w-5xl px-6 pb-24 pt-28 lg:px-10 xl:px-16">
         <header className="space-y-6 text-balance">
-          <h1 className="text-4xl font-semibold tracking-tight text-emerald-300 sm:text-5xl">Sell or consign your GPU</h1>
-          <p className="text-lg text-emerald-50/80">
+          <h1 className="text-4xl font-semibold tracking-tight text-secondary-300 sm:text-5xl">Sell or consign your GPU</h1>
+          <p className="text-lg text-slate-300">
             Tell us about your graphics card and choose whether you want a refurbish package. We&apos;ll generate an instant trade-in
             estimate, schedule a pickup, and list it on the GPU Doctor marketplace once it passes validation.
           </p>
@@ -80,17 +80,17 @@ const SellPage = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="mt-12 grid gap-8 rounded-3xl border border-emerald-500/20 bg-[#0b1f17]/70 p-8 backdrop-blur lg:grid-cols-[1.05fr_0.95fr]"
+          className="mt-12 grid gap-8 rounded-3xl border border-primary-500/20 bg-background-section/70 p-8 backdrop-blur lg:grid-cols-[1.05fr_0.95fr]"
         >
           <div className="space-y-6">
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="brand">
+              <label className="text-sm font-semibold text-primary-300" htmlFor="brand">
                 GPU brand
               </label>
               <select
                 id="brand"
                 name="brand"
-                className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
+                className="mt-2 w-full rounded-2xl border border-primary-500/20 bg-background-card px-4 py-3 text-sm text-slate-100"
                 value={formState.brand}
                 onChange={handleChange}
               >
@@ -102,13 +102,13 @@ const SellPage = () => {
               </select>
             </div>
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="model">
+              <label className="text-sm font-semibold text-primary-300" htmlFor="model">
                 Model
               </label>
               <select
                 id="model"
                 name="model"
-                className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
+                className="mt-2 w-full rounded-2xl border border-primary-500/20 bg-background-card px-4 py-3 text-sm text-slate-100"
                 value={formState.model}
                 onChange={handleChange}
               >
@@ -121,13 +121,13 @@ const SellPage = () => {
             </div>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="text-sm font-semibold text-emerald-200" htmlFor="condition">
+                <label className="text-sm font-semibold text-primary-300" htmlFor="condition">
                   Condition
                 </label>
                 <select
                   id="condition"
                   name="condition"
-                  className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
+                  className="mt-2 w-full rounded-2xl border border-primary-500/20 bg-background-card px-4 py-3 text-sm text-slate-100"
                   value={formState.condition}
                   onChange={handleChange}
                 >
@@ -139,13 +139,13 @@ const SellPage = () => {
                 </select>
               </div>
               <div>
-                <label className="text-sm font-semibold text-emerald-200" htmlFor="issue">
+                <label className="text-sm font-semibold text-primary-300" htmlFor="issue">
                   Issue type
                 </label>
                 <select
                   id="issue"
                   name="issue"
-                  className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
+                  className="mt-2 w-full rounded-2xl border border-primary-500/20 bg-background-card px-4 py-3 text-sm text-slate-100"
                   value={formState.issue}
                   onChange={handleChange}
                 >
@@ -159,13 +159,13 @@ const SellPage = () => {
             </div>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="text-sm font-semibold text-emerald-200" htmlFor="hours">
+                <label className="text-sm font-semibold text-primary-300" htmlFor="hours">
                   Approximate usage hours
                 </label>
                 <select
                   id="hours"
                   name="hours"
-                  className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
+                  className="mt-2 w-full rounded-2xl border border-primary-500/20 bg-background-card px-4 py-3 text-sm text-slate-100"
                   value={formState.hours}
                   onChange={handleChange}
                 >
@@ -177,13 +177,13 @@ const SellPage = () => {
                 </select>
               </div>
               <div>
-                <label className="text-sm font-semibold text-emerald-200" htmlFor="accessories">
+                <label className="text-sm font-semibold text-primary-300" htmlFor="accessories">
                   Accessories
                 </label>
                 <select
                   id="accessories"
                   name="accessories"
-                  className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
+                  className="mt-2 w-full rounded-2xl border border-primary-500/20 bg-background-card px-4 py-3 text-sm text-slate-100"
                   value={formState.accessories}
                   onChange={handleChange}
                 >
@@ -194,13 +194,13 @@ const SellPage = () => {
               </div>
             </div>
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="refurbish">
+              <label className="text-sm font-semibold text-primary-300" htmlFor="refurbish">
                 Refurbish before listing?
               </label>
               <select
                 id="refurbish"
                 name="refurbish"
-                className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50"
+                className="mt-2 w-full rounded-2xl border border-primary-500/20 bg-background-card px-4 py-3 text-sm text-slate-100"
                 value={formState.refurbish}
                 onChange={handleChange}
               >
@@ -209,7 +209,7 @@ const SellPage = () => {
               </select>
             </div>
             <div>
-              <label className="text-sm font-semibold text-emerald-200" htmlFor="notes">
+              <label className="text-sm font-semibold text-primary-300" htmlFor="notes">
                 Additional details
               </label>
               <textarea
@@ -217,34 +217,34 @@ const SellPage = () => {
                 name="notes"
                 rows={4}
                 placeholder="List any modifications, cooling swaps, or previous repairs."
-                className="mt-2 w-full rounded-2xl border border-emerald-500/20 bg-[#091810] px-4 py-3 text-sm text-emerald-50 placeholder:text-emerald-200/40"
+                className="mt-2 w-full rounded-2xl border border-primary-500/20 bg-background-card px-4 py-3 text-sm text-slate-100 placeholder:text-slate-400"
                 value={formState.notes}
                 onChange={handleChange}
               />
             </div>
             <button
               type="submit"
-              className="w-full rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-sky-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:from-emerald-300 hover:via-cyan-300 hover:to-sky-400"
+              className="w-full rounded-full bg-gradient-to-r from-primary-500 to-secondary-600 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-primary-500/30 transition hover:from-primary-400 hover:to-secondary-500"
             >
               Get my trade-in estimate
             </button>
           </div>
-          <aside className="flex flex-col justify-between rounded-3xl border border-emerald-500/20 bg-[#091810] p-6 text-sm text-emerald-50/80">
+          <aside className="flex flex-col justify-between rounded-3xl border border-primary-500/20 bg-background-card p-6 text-sm text-slate-300">
             <div>
-              <h2 className="text-lg font-semibold text-emerald-200">Estimated payout</h2>
-              <p className="mt-3 text-3xl font-semibold text-emerald-50">${estimatedValue}</p>
-              <p className="mt-2 text-xs text-emerald-50/70">
+              <h2 className="text-lg font-semibold text-primary-300">Estimated payout</h2>
+              <p className="mt-3 text-3xl font-semibold text-slate-100">${estimatedValue}</p>
+              <p className="mt-2 text-xs text-slate-400">
                 Final payout confirmed after diagnostics. Refurbish packages can increase value up to 15%.
               </p>
             </div>
             <div className="space-y-4">
-              <div className="rounded-2xl border border-emerald-500/20 bg-[#0b1f17]/70 p-4 text-xs text-emerald-50/80">
+              <div className="rounded-2xl border border-primary-500/20 bg-background-section/70 p-4 text-xs text-slate-300">
                 <p>• Free insured pickup within 24 hours in supported cities.</p>
                 <p className="mt-2">• Instant marketplace listing once refurbished or validated.</p>
                 <p className="mt-2">• Track status and offers directly from your GPU Doctor dashboard.</p>
               </div>
               {submitted ? (
-                <div className="rounded-2xl border border-emerald-400/30 bg-emerald-400/10 p-4 text-xs text-emerald-200">
+                <div className="rounded-2xl border border-primary-500/30 bg-primary-500/10 p-4 text-xs text-primary-300">
                   Thank you! A specialist will confirm shipping details via email shortly.
                 </div>
               ) : null}
